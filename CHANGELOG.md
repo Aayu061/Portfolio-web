@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.2.0] — 2026-11-13
+
+### Changed & Enhanced
+- **High-Contrast "Hello, I'm" Script in Dark Mode**:
+  - Resolved low-contrast text visibility issue by mapping `.hero-intro-script` to `--hero-intro-color` (`#ff5376`) with a vibrant ambient glow (`0 0 20px rgba(255, 83, 118, 0.45)`) in Dark Mode, while retaining rich editorial crimson (`#D31027`) in Light Mode.
+- **Programmer & Gamer Suited Hero Watermark**:
+  - Replaced the generic `PORTFOLIO` watermark with the authoritative, bold title **`DEVELOPER`**, perfectly tailored to software and gaming culture.
+  - Added telemetry badge `DEV // LVL.99` to the hero top metadata bar.
+- **Full-Screen, Expansive & Flexible Layout**:
+  - Expanded `.container` from a narrow `1360px` box to a fluid, full-screen architecture: `max-width: min(94vw, 1760px)`.
+  - Upgraded `.hero-editorial-grid`, `.bento-section-editorial`, and `.contact-editorial-grid` to utilize dynamic CSS grid clamps, eliminating dead side gutters on wide monitors (1080p, 1440p, 4K) while remaining fluid across laptops, tablets, and phones.
+- **Authentic Coding IDE Platform on Laptop Mockup**:
+  - Replaced the generic HTML placeholder laptop screen with a photorealistic modern dark-themed VS Code coding IDE interface featuring colorful TypeScript/Node.js syntax highlighting, file explorer sidebar, active editor tabs (`server.ts`), and an integrated developer terminal running at the bottom.
+
 ## [2.1.0] — 2026-11-13
 
 ### Changed & Enhanced

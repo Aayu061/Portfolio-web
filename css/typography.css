@@ -30,13 +30,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-intro-script {
   font-family: var(--font-script);
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  color: var(--color-crimson-red);
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  color: var(--hero-intro-color);
   line-height: 1;
   font-weight: 700;
   transform: rotate(-3deg);
   display: inline-block;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
+  text-shadow: var(--hero-intro-glow, none);
 }
 
 .hero-display-name {

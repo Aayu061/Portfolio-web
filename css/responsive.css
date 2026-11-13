@@ -158,15 +158,16 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .hero-editorial-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: var(--space-xl);
   }
 
   .hero-center-cutout {
+    grid-column: 1 / -1;
     order: -1;
     margin-bottom: var(--space-lg);
-    max-width: 360px;
-    height: clamp(380px, 50vh, 520px);
+    max-width: 420px;
+    height: clamp(380px, 52vh, 540px);
     margin-inline: auto;
   }
 
@@ -185,6 +186,11 @@
   .hero-editorial-grid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+  }
+
+  .hero-center-cutout {
+    max-width: 320px;
+    height: clamp(320px, 46vh, 440px);
   }
 
   .hero-right-col {

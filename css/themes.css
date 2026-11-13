@@ -36,6 +36,9 @@
   --watermark-stroke: none;
   --watermark-opacity: 0.95;
 
+  --hero-intro-color: #ff5376;
+  --hero-intro-glow: 0 0 20px rgba(255, 83, 118, 0.45);
+
   --grid-line: rgba(255, 255, 255, 0.03);
   --node-canvas-bg: #07080b;
   --node-circle-stroke: #D31027;
@@ -73,6 +76,9 @@
   --watermark-color: transparent;
   --watermark-stroke: 2px rgba(211, 16, 39, 0.45);
   --watermark-opacity: 0.85;
+
+  --hero-intro-color: #D31027;
+  --hero-intro-glow: none;
 
   --grid-line: rgba(17, 18, 22, 0.04);
   --node-canvas-bg: #FAF7F5;
