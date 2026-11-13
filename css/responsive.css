@@ -79,7 +79,6 @@
   .projects-track-wrapper {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     padding-bottom: var(--space-md);
   }
 

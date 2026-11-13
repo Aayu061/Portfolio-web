@@ -215,9 +215,13 @@
             </p>
 
             <div class="about-actions">
-              <a href="assets/docs/Aayush_Panchal_Resume.pdf" target="_blank" class="btn btn-primary" download>
+              <button type="button" class="btn btn-primary" data-action="open-resume-preview">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                Preview Resume &nearr;
+              </button>
+              <a href="assets/docs/Aayush_Panchal_Resume.pdf" class="btn btn-secondary" download>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Download Resume (PDF)
+                Download PDF
               </a>
               <a href="https://github.com/Aayu061" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 Explore GitHub Profile &nearr;
@@ -442,7 +446,8 @@
           <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
             <!-- Honeypot for spam mitigation -->
-            <input type="checkbox" name="botcheck" class="form-honeypot">
+            <input type="checkbox" id="form-botcheck" name="botcheck" class="form-honeypot" title="Anti-spam honeypot" tabindex="-1">
+            <label for="form-botcheck" class="form-honeypot">Anti-spam honeypot verification</label>
 
             <div class="form-group">
               <label for="form-name" class="form-label">FULL NAME *</label>
@@ -538,6 +543,36 @@
       <div id="drawer-outcomes"></div>
     </div>
   </aside>
+
+  <!-- Interactive Resume PDF Preview Modal -->
+  <div id="resume-preview-backdrop" class="resume-preview-backdrop" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="resume-preview-modal">
+      <div class="resume-preview-header">
+        <div>
+          <div class="resume-modal-tag">[DOCUMENT // VERIFIED RESUME]</div>
+          <h3 id="resume-modal-title" class="resume-modal-title">Aayush Deepak Panchal &mdash; Curriculum Vitae</h3>
+        </div>
+        <div class="resume-header-actions">
+          <a href="assets/docs/Aayush_Panchal_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            Open in Tab &nearr;
+          </a>
+          <a href="assets/docs/Aayush_Panchal_Resume.pdf" class="btn btn-primary btn-sm" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download PDF
+          </a>
+          <button type="button" id="resume-modal-close" class="btn-icon" aria-label="Close Resume Preview">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+      <div class="resume-preview-body">
+        <object data="assets/docs/Aayush_Panchal_Resume.pdf" type="application/pdf" class="resume-iframe" title="Aayush Panchal Resume Document Preview">
+          <iframe src="assets/docs/Aayush_Panchal_Resume.pdf#view=FitH" title="Aayush Panchal Resume Document Preview" class="resume-iframe"></iframe>
+        </object>
+      </div>
+    </div>
+  </div>
 
   <!-- Command Palette Modal (Cmd+K / Ctrl+K) -->
   <div id="cmd-palette-backdrop" class="cmd-palette-backdrop" role="dialog" aria-modal="true" aria-label="Command Palette">

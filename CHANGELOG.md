@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] — 2026-11-13
+
+### Added
+- **Interactive Resume PDF Preview Modal**:
+  - Glassmorphic modal with embedded PDF viewer (`<object>` + `<iframe>`) for immediate in-browser reading of verified `Aayush_Panchal_Resume.pdf`.
+  - Accessible focus trapping, keyboard navigation (`Escape` to close, `Tab` cycle), and procedural micro-audio cues.
+  - Spotlight command palette integration: "Preview Resume (Interactive Document Viewer)".
+  - Quick action buttons: "Open in Tab &nearr;", "Download PDF &darr;", and instant dismiss.
+
+### Fixed
+- Resolved all remaining VS Code linter and accessibility warnings:
+  - Added accessible `<label>` and `title` to the anti-spam honeypot input satisfying `Microsoft Edge Tools (axe/forms)`.
+  - Removed deprecated `-webkit-overflow-scrolling: touch;` in `css/responsive.css`.
+  - Normalized `html` font scaling in `css/reset.css` to eliminate browser compatibility warnings in `Microsoft Edge Tools (compat-api/css)`.
+  - Added `.hintrc` and configured `.vscode/settings.json` to disable obsolete Webhint noise.
+
 ## [1.1.0] — 2026-11-13
 
 ### Added

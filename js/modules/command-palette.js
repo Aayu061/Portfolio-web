@@ -54,6 +54,14 @@ export function initCommandPalette() {
       }
     },
     {
+      label: 'Preview Resume (Interactive Document Viewer)',
+      category: 'Quick Actions',
+      action: () => {
+        closePalette();
+        eventBus.emit('resume:preview:open');
+      }
+    },
+    {
       label: 'Download Verified Resume (PDF)',
       category: 'Quick Actions',
       action: () => {
