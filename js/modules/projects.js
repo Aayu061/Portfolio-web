@@ -83,7 +83,7 @@ function renderCards(projects, container) {
           ${p.technologies.slice(0, 4).map(t => `<span class="tech-badge">${t}</span>`).join('')}
         </div>
         <div class="project-card__actions">
-          <button class="btn btn-primary" data-action="open-case-study" data-project-id="${p.id}" style="width: 100%;">
+          <button type="button" class="btn btn-primary" data-action="open-case-study" data-project-id="${p.id}" style="width: 100%;">
             View Case Study &rarr;
           </button>
         </div>
@@ -185,7 +185,7 @@ function openDrawer(project, drawer, backdrop) {
       <div class="code-tabs">
         <div class="code-tabs__header">
           ${snippets.map((s, idx) => `
-            <button class="code-tab-btn ${idx === 0 ? 'active' : ''}" data-tab="${idx}">
+            <button type="button" class="code-tab-btn ${idx === 0 ? 'active' : ''}" data-tab="${idx}">
               ${s.filename}
             </button>
           `).join('')}

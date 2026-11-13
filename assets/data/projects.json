@@ -6,7 +6,15 @@
     "status": "COMPLETED",
     "summary": "Production AC service management web platform engineering end-to-end service, asset, AMC, technician, inventory, and payment operations with audit logs.",
     "thumbnail": "assets/images/projects/place-your-service/preview.webp",
-    "technologies": ["TypeScript", "Node.js", "Express", "Supabase", "PostgreSQL", "Vercel", "Render"],
+    "technologies": [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Supabase",
+      "PostgreSQL",
+      "Vercel",
+      "Render"
+    ],
     "links": {
       "github": "https://github.com/Aayu061/place-your-service",
       "live": "https://place-your-service.vercel.app/"
@@ -19,7 +27,12 @@
       "architecture": {
         "description": "Client SPA -> Vercel Edge CDN -> Render Express API Gateway -> Supabase PostgreSQL Database with Row Level Security (RLS).",
         "diagramType": "sequenceDiagram",
-        "layers": ["Client Dashboard (HTML/CSS/TS)", "Edge Routing (Vercel)", "REST API Services (Node.js/Express)", "PostgreSQL Relational DB (Supabase RLS)"]
+        "layers": [
+          "Client Dashboard (HTML/CSS/TS)",
+          "Edge Routing (Vercel)",
+          "REST API Services (Node.js/Express)",
+          "PostgreSQL Relational DB (Supabase RLS)"
+        ]
       },
       "tradeoffs": [
         {
@@ -63,7 +76,17 @@
     "status": "COMPLETED",
     "summary": "Full-stack enterprise HVAC sales, servicing, recurring AMC lifecycle, and real-time dispatch web platform live in production on Vercel and Render.",
     "thumbnail": "assets/images/projects/extreme-sales/preview.webp",
-    "technologies": ["JavaScript", "HTML5", "CSS3", "Node.js", "Express", "Firebase", "Firestore", "Render", "Vercel"],
+    "technologies": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Node.js",
+      "Express",
+      "Firebase",
+      "Firestore",
+      "Render",
+      "Vercel"
+    ],
     "links": {
       "github": "https://github.com/Aayu061/extreme-sales-services",
       "live": "https://extreme-sales-services.vercel.app"
@@ -76,7 +99,11 @@
       "architecture": {
         "description": "Production Frontend on Vercel Global Edge CDN, Render Node.js backend service with live /healthz monitoring, Google Cloud Firestore database.",
         "diagramType": "flowchart",
-        "layers": ["Responsive Frontend (Vercel)", "Node.js Web Service (Render)", "Google Cloud Firestore DB"]
+        "layers": [
+          "Responsive Frontend (Vercel)",
+          "Node.js Web Service (Render)",
+          "Google Cloud Firestore DB"
+        ]
       },
       "tradeoffs": [
         {
@@ -108,7 +135,15 @@
     "status": "COMPLETED",
     "summary": "Cinematic AI-driven commerce platform integrating a 192-frame canvas experience, Gemini-powered intent-aware AI Barista V2, and Drink Studio.",
     "thumbnail": "assets/images/projects/ai-cafe/preview.webp",
-    "technologies": ["TypeScript", "Gemini API", "HTML5 Canvas", "CSS3", "Firebase Auth", "Firestore", "Tailwind CSS"],
+    "technologies": [
+      "TypeScript",
+      "Gemini API",
+      "HTML5 Canvas",
+      "CSS3",
+      "Firebase Auth",
+      "Firestore",
+      "Tailwind CSS"
+    ],
     "links": {
       "github": "https://github.com/Aayu061/Ai-cafe",
       "live": "https://github.com/Aayu061/Ai-cafe"
@@ -121,7 +156,12 @@
       "architecture": {
         "description": "Preloaded 192 WebP frame canvas -> Gemini LLM Intent Parser -> Deterministic Firestore Catalog Query -> Real-Time Cart State.",
         "diagramType": "flowchart",
-        "layers": ["192-Frame Canvas Renderer", "Gemini AI Barista Intent Engine", "Firestore Authoritative Catalog", "Cart & Checkout State"]
+        "layers": [
+          "192-Frame Canvas Renderer",
+          "Gemini AI Barista Intent Engine",
+          "Firestore Authoritative Catalog",
+          "Cart & Checkout State"
+        ]
       },
       "tradeoffs": [
         {
@@ -159,7 +199,16 @@
     "status": "COMPLETED",
     "summary": "Full-stack loan management platform built with Express and PostgreSQL, featuring relational SQL migrations, JWT security, loan calculator, and admin portal.",
     "thumbnail": "assets/images/projects/bank-loan/preview.webp",
-    "technologies": ["JavaScript", "Node.js", "Express", "PostgreSQL", "SQL Migrations", "JWT", "HTML5", "CSS3"],
+    "technologies": [
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "SQL Migrations",
+      "JWT",
+      "HTML5",
+      "CSS3"
+    ],
     "links": {
       "github": "https://github.com/Aayu061/Bank-loan",
       "live": "https://github.com/Aayu061/Bank-loan"
@@ -172,7 +221,12 @@
       "architecture": {
         "description": "Express.js REST API -> JWT Authentication & Authorization Middleware -> PostgreSQL Relational Database with init.sql schema migrations.",
         "diagramType": "sequenceDiagram",
-        "layers": ["Responsive Financial UI", "Express JWT Security Middleware", "PostgreSQL Relational DB", "Automated SQL Migrations"]
+        "layers": [
+          "Responsive Financial UI",
+          "Express JWT Security Middleware",
+          "PostgreSQL Relational DB",
+          "Automated SQL Migrations"
+        ]
       },
       "tradeoffs": [
         {
@@ -204,4 +258,3 @@
     }
   }
 ]
-

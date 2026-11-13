@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Panchal — Independent Developer & Full-Stack Engineer</title>
-  <meta name="title" content="Aayush Panchal — Independent Developer & Full-Stack Engineer">
+  <title>Aayush Panchal — Independent Developer &amp; Full-Stack Engineer</title>
+  <meta name="title" content="Aayush Panchal — Independent Developer &amp; Full-Stack Engineer">
   <meta name="description" content="Personal developer portfolio of Aayush Panchal. Specializing in full-stack web applications, interaction design, RESTful APIs, and modern database architectures.">
   <meta name="keywords" content="Aayush Panchal, Full-Stack Developer, Software Engineer, Portfolio, Node.js, PostgreSQL, Supabase, GSAP, Web Development">
   <meta name="author" content="Aayush Panchal">
@@ -14,7 +14,7 @@
   <!-- Open Graph / Social Meta -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aayushpanchal.dev/">
-  <meta property="og:title" content="Aayush Panchal — Independent Developer & Full-Stack Engineer">
+  <meta property="og:title" content="Aayush Panchal — Independent Developer &amp; Full-Stack Engineer">
   <meta property="og:description" content="Engineering ideas into digital experiences. Explore full-stack projects, architecture case studies, and development philosophy.">
   <meta property="og:image" content="assets/images/og-preview.png">
 
@@ -79,10 +79,10 @@
   <div class="dot-grid-bg" aria-hidden="true"></div>
 
   <!-- 00. Branded Preloader -->
-  <div class="preloader-overlay" role="progressbar" aria-label="Loading portfolio experience">
+  <div class="preloader-overlay" role="status" aria-label="Loading portfolio experience">
     <div class="preloader-curtain preloader-curtain--top" aria-hidden="true"></div>
     <div class="preloader-curtain preloader-curtain--bottom" aria-hidden="true"></div>
-    <div style="position: relative; z-index: 10; text-align: center;">
+    <div class="preloader-content">
       <div class="preloader-brand">Aayush Panchal</div>
       <div class="preloader-telemetry">
         <span>INITIALIZING STUDIO ENGINE...</span>
@@ -115,25 +115,25 @@
       <!-- Utilities (Command Palette, Audio, Theme, Mobile Hamburger) -->
       <div class="nav-utilities">
         <!-- Command Palette Pill -->
-        <button class="cmd-pill" data-action="open-command-palette" aria-label="Open Command Palette">
+        <button type="button" class="cmd-pill" data-action="open-command-palette" aria-label="Open Command Palette">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <span>Cmd+K</span>
         </button>
 
         <!-- Procedural Audio Toggle -->
-        <button class="btn-icon" data-action="toggle-audio" aria-pressed="false" aria-label="Unmute procedural soundscape">
+        <button type="button" class="btn-icon" data-action="toggle-audio" aria-pressed="false" aria-label="Unmute procedural soundscape">
           <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-          <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <svg class="icon-unmuted hidden-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
         </button>
 
         <!-- Dark / Light Theme Toggle -->
-        <button class="btn-icon" data-action="toggle-theme" aria-label="Toggle dark and light theme">
+        <button type="button" class="btn-icon" data-action="toggle-theme" aria-label="Toggle dark and light theme">
           <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="icon-moon hidden-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
 
         <!-- Mobile Menu Toggle Button -->
-        <button class="btn-icon mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <button type="button" class="btn-icon mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -150,8 +150,8 @@
             <span>AVAILABLE FOR OPPORTUNITIES</span>
           </div>
           <h1 class="hero-headline">Engineering Digital Experiences.</h1>
-          <p class="lead" style="margin-top: 1.25rem; max-width: 48ch;">
-            "I design, develop and engineer modern digital products by combining creative thinking with technical execution."
+          <p class="lead hero-lead">
+            &ldquo;I design, develop and engineer modern digital products by combining creative thinking with technical execution.&rdquo;
           </p>
           <div class="hero-actions">
             <a href="#work" class="btn btn-primary">
@@ -161,7 +161,7 @@
               About Developer
             </a>
           </div>
-          <div style="display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted);">
+          <div class="hero-scroll-indicator">
             <span>SCROLL TO DISCOVER</span>
             <span>•</span>
             <span>01 // 07 ARCHITECTURE</span>
@@ -170,7 +170,7 @@
 
         <!-- Interactive System Node Engine Visualizer -->
         <div class="hero-visual-wrapper">
-          <canvas id="hero-canvas" class="hero-canvas" aria-label="Interactive system architecture diagram"></canvas>
+          <canvas id="hero-canvas" class="hero-canvas"></canvas>
           <div class="hero-telemetry-tooltip" role="status" aria-live="polite"></div>
         </div>
       </div>
@@ -180,7 +180,7 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">01 // IDENTITY & PURPOSE</span>
+          <span class="section-tag">01 // IDENTITY &amp; PURPOSE</span>
           <h2 class="section-title">I Think in Systems. I Build with Purpose.</h2>
         </div>
 
@@ -190,8 +190,8 @@
             <div class="portrait-image-wrapper">
               <div class="portrait-placeholder-graphic">
                 <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                <div style="font-family: var(--font-heading); font-weight: 700; font-size: var(--text-lg); color: #ffffff;">AAYUSH PANCHAL</div>
-                <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-warm-peach); margin-top: 4px;">STUDIO LEAD / FULL-STACK</div>
+                <div class="portrait-title">AAYUSH PANCHAL</div>
+                <div class="portrait-subtext">STUDIO LEAD / FULL-STACK</div>
               </div>
             </div>
             <div class="portrait-meta">
@@ -208,13 +208,13 @@
               Third-year B.Sc. Computer Science student at Shri D.D. Vispute College (University of Mumbai) with hands-on experience building and deploying production full-stack web applications.
             </p>
             <p>
-              Rather than assembling superficial templates, I specialize in deconstructing real-world operational problems—from AC service management SaaS platforms and commercial HVAC dispatch systems to AI-powered e-commerce workflows and relational banking databases.
+              Rather than assembling superficial templates, I specialize in deconstructing real-world operational problems&mdash;from AC service management SaaS platforms and commercial HVAC dispatch systems to AI-powered e-commerce workflows and relational banking databases.
             </p>
             <p>
               Skilled in modern frontend and backend engineering with Node.js, Express, REST APIs, and PostgreSQL/Supabase database integration with Row-Level Security (RLS) and cloud deployments on Vercel and Render.
             </p>
 
-            <div style="display: flex; gap: var(--space-md); margin-top: var(--space-md); flex-wrap: wrap;">
+            <div class="about-actions">
               <a href="assets/docs/Aayush_Panchal_Resume.pdf" target="_blank" class="btn btn-primary" download>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 Download Resume (PDF)
@@ -233,8 +233,8 @@
       <div class="container">
         <div class="section-header section-header--split">
           <div>
-            <span class="section-tag">02 // CAPABILITIES & DISCIPLINES</span>
-            <h2 class="section-title">Technical Mastery & Stack</h2>
+            <span class="section-tag">02 // CAPABILITIES &amp; DISCIPLINES</span>
+            <h2 class="section-title">Technical Mastery &amp; Stack</h2>
           </div>
           <p class="section-header__desc">
             Demonstrated engineering expertise across frontend performance, backend API security, relational database design, and cloud deployments.
@@ -246,7 +246,7 @@
           <article class="studio-card expertise-card">
             <div class="expertise-card__num">01 // DOMAIN</div>
             <h3 class="expertise-card__title">Frontend Engineering</h3>
-            <p style="font-size: var(--text-sm);">Crafting responsive, accessible, and high-performance interfaces using modern native web standards and hardware-accelerated motion.</p>
+            <p class="card-description">Crafting responsive, accessible, and high-performance interfaces using modern native web standards and hardware-accelerated motion.</p>
             <div class="expertise-card__skills">
               <span class="tech-badge">HTML5 Semantic</span>
               <span class="tech-badge">CSS3 Custom Tokens</span>
@@ -262,7 +262,7 @@
           <article class="studio-card expertise-card">
             <div class="expertise-card__num">02 // DOMAIN</div>
             <h3 class="expertise-card__title">Backend Systems</h3>
-            <p style="font-size: var(--text-sm);">Engineering resilient RESTful services, role-based access security, lifecycle state machines, and webhook dispatchers.</p>
+            <p class="card-description">Engineering resilient RESTful services, role-based access security, lifecycle state machines, and webhook dispatchers.</p>
             <div class="expertise-card__skills">
               <span class="tech-badge">Node.js</span>
               <span class="tech-badge">Express.js</span>
@@ -278,13 +278,13 @@
           <article class="studio-card expertise-card">
             <div class="expertise-card__num">03 // DOMAIN</div>
             <h3 class="expertise-card__title">Database Architecture</h3>
-            <p style="font-size: var(--text-sm);">Designing normalized schemas, executing pure SQL migrations, enforcing Row Level Security (RLS), and maintaining ACID integrity.</p>
+            <p class="card-description">Designing normalized schemas, executing pure SQL migrations, enforcing Row Level Security (RLS), and maintaining ACID integrity.</p>
             <div class="expertise-card__skills">
               <span class="tech-badge">PostgreSQL</span>
               <span class="tech-badge">Supabase RLS</span>
               <span class="tech-badge">SQL Migrations (init.sql)</span>
               <span class="tech-badge">Firebase Firestore</span>
-              <span class="tech-badge">Foreign Keys & Indexes</span>
+              <span class="tech-badge">Foreign Keys &amp; Indexes</span>
               <span class="tech-badge">ACID Transactions</span>
             </div>
           </article>
@@ -292,12 +292,12 @@
           <!-- 04 AI & Deployment -->
           <article class="studio-card expertise-card">
             <div class="expertise-card__num">04 // DOMAIN</div>
-            <h3 class="expertise-card__title">AI & Cloud Deployment</h3>
-            <p style="font-size: var(--text-sm);">Integrating LLM intent classifiers with deterministic backends, automated GitHub workflows, and edge cloud CDN delivery.</p>
+            <h3 class="expertise-card__title">AI &amp; Cloud Deployment</h3>
+            <p class="card-description">Integrating LLM intent classifiers with deterministic backends, automated GitHub workflows, and edge cloud CDN delivery.</p>
             <div class="expertise-card__skills">
               <span class="tech-badge">Google Gemini API</span>
               <span class="tech-badge">Intent Engines</span>
-              <span class="tech-badge">Git & GitHub</span>
+              <span class="tech-badge">Git &amp; GitHub</span>
               <span class="tech-badge">Vercel Edge</span>
               <span class="tech-badge">Render Web Service</span>
               <span class="tech-badge">Lighthouse 95+</span>
@@ -312,7 +312,7 @@
       <div class="container">
         <div class="section-header section-header--split">
           <div>
-            <span class="section-tag">03 // PRODUCTION & ARCHITECTURE</span>
+            <span class="section-tag">03 // PRODUCTION &amp; ARCHITECTURE</span>
             <h2 class="section-title">Selected Work. Built Solutions.</h2>
           </div>
           <p class="section-header__desc">
@@ -321,7 +321,7 @@
         </div>
 
         <div class="projects-track-wrapper">
-          <div id="projects-track" class="projects-track" role="region" aria-label="Horizontal project showcase">
+          <div id="projects-track" class="projects-track">
             <!-- Dynamic project cards populated from assets/data/projects.json -->
           </div>
         </div>
@@ -333,15 +333,15 @@
       <div class="container">
         <div class="section-header section-header--split">
           <div>
-            <span class="section-tag">04 // EVOLUTION & MILESTONES</span>
+            <span class="section-tag">04 // EVOLUTION &amp; MILESTONES</span>
             <h2 class="section-title">Learning. Building. Improving.</h2>
           </div>
           <!-- Filter Tabs -->
           <div class="journey-filters" role="tablist">
-            <button class="filter-pill active" data-filter="ALL" role="tab">All Milestones</button>
-            <button class="filter-pill" data-filter="EDUCATION" role="tab">Education</button>
-            <button class="filter-pill" data-filter="PROJECT" role="tab">Projects</button>
-            <button class="filter-pill" data-filter="MILESTONE" role="tab">Milestones</button>
+            <button type="button" class="filter-pill active" data-filter="ALL" role="tab">All Milestones</button>
+            <button type="button" class="filter-pill" data-filter="EDUCATION" role="tab">Education</button>
+            <button type="button" class="filter-pill" data-filter="PROJECT" role="tab">Projects</button>
+            <button type="button" class="filter-pill" data-filter="MILESTONE" role="tab">Milestones</button>
           </div>
         </div>
 
@@ -357,7 +357,7 @@
         <div class="section-header">
           <span class="section-tag">05 // ENGINEERING METHODOLOGY</span>
           <h2 class="section-title">Good Software is More Than Good Code.</h2>
-          <p class="lead" style="margin-top: 1rem; max-width: 58ch;">
+          <p class="lead philosophy-lead">
             A deliberate 4-stage engineering lifecycle transforming ambiguity into resilient, production-ready digital products.
           </p>
         </div>
@@ -366,25 +366,25 @@
           <div class="philosophy-card">
             <div class="philosophy-card__step">STAGE 01 //</div>
             <h3 class="philosophy-card__name">Discover</h3>
-            <p style="font-size: var(--text-sm);">Deconstruct operational friction, identify user roles, analyze constraints, and establish verified system requirements.</p>
+            <p class="card-description">Deconstruct operational friction, identify user roles, analyze constraints, and establish verified system requirements.</p>
           </div>
 
           <div class="philosophy-card">
             <div class="philosophy-card__step">STAGE 02 //</div>
             <h3 class="philosophy-card__name">Design</h3>
-            <p style="font-size: var(--text-sm);">Architect relational data schemas, design tactile interaction tokens, and map clear API contracts before writing code.</p>
+            <p class="card-description">Architect relational data schemas, design tactile interaction tokens, and map clear API contracts before writing code.</p>
           </div>
 
           <div class="philosophy-card">
             <div class="philosophy-card__step">STAGE 03 //</div>
             <h3 class="philosophy-card__name">Develop</h3>
-            <p style="font-size: var(--text-sm);">Engineer modular, framework-free code with native DOM APIs, enforce database constraints, and eliminate bloat.</p>
+            <p class="card-description">Engineer modular, framework-free code with native DOM APIs, enforce database constraints, and eliminate bloat.</p>
           </div>
 
           <div class="philosophy-card">
             <div class="philosophy-card__step">STAGE 04 //</div>
             <h3 class="philosophy-card__name">Deliver</h3>
-            <p style="font-size: var(--text-sm);">Audit against WCAG 2.1 AA, verify 60fps frame budgets, configure edge CDN headers, and deploy to live production.</p>
+            <p class="card-description">Audit against WCAG 2.1 AA, verify 60fps frame budgets, configure edge CDN headers, and deploy to live production.</p>
           </div>
         </div>
       </div>
@@ -394,7 +394,7 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">06 // DIRECT CONTACT & COLLABORATION</span>
+          <span class="section-tag">06 // DIRECT CONTACT &amp; COLLABORATION</span>
           <h2 class="section-title">Let's Turn Your Next Idea into Something Real.</h2>
         </div>
 
@@ -408,32 +408,32 @@
             <a href="mailto:aayu.panchal06@gmail.com" class="coord-item">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               <div>
-                <div style="font-family: var(--font-mono); font-size: var(--text-2xs); color: var(--highlight);">EMAIL DISPATCH</div>
-                <div style="font-weight: 600;">aayu.panchal06@gmail.com</div>
+                <div class="coord-label">EMAIL DISPATCH</div>
+                <div class="coord-value">aayu.panchal06@gmail.com</div>
               </div>
             </a>
 
             <a href="tel:+919082787284" class="coord-item">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
               <div>
-                <div style="font-family: var(--font-mono); font-size: var(--text-2xs); color: var(--highlight);">PHONE DIRECT</div>
-                <div style="font-weight: 600;">+91 9082787284</div>
+                <div class="coord-label">PHONE&nbsp;DIRECT</div>
+                <div class="coord-value">+91&nbsp;9082787284</div>
               </div>
             </a>
 
             <a href="https://github.com/Aayu061" target="_blank" rel="noopener noreferrer" class="coord-item">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
               <div>
-                <div style="font-family: var(--font-mono); font-size: var(--text-2xs); color: var(--highlight);">GITHUB REPOSITORIES</div>
-                <div style="font-weight: 600;">github.com/Aayu061</div>
+                <div class="coord-label">GITHUB REPOSITORIES</div>
+                <div class="coord-value">github.com/Aayu061</div>
               </div>
             </a>
 
             <a href="https://www.linkedin.com/in/aayush-panchal-24313044b" target="_blank" rel="noopener noreferrer" class="coord-item">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               <div>
-                <div style="font-family: var(--font-mono); font-size: var(--text-2xs); color: var(--highlight);">LINKEDIN NETWORK</div>
-                <div style="font-weight: 600;">linkedin.com/in/aayush-panchal-24313044b</div>
+                <div class="coord-label">LINKEDIN NETWORK</div>
+                <div class="coord-value">linkedin.com/in/aayush-panchal-24313044b</div>
               </div>
             </a>
           </div>
@@ -442,7 +442,7 @@
           <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
             <!-- Honeypot for spam mitigation -->
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <input type="checkbox" name="botcheck" class="form-honeypot">
 
             <div class="form-group">
               <label for="form-name" class="form-label">FULL NAME *</label>
@@ -469,9 +469,9 @@
               <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about your team, product, or challenge..." required></textarea>
             </div>
 
-            <div id="form-status-msg" style="display: none;"></div>
+            <div id="form-status-msg" class="form-status-msg"></div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+            <button type="submit" class="btn btn-primary btn-submit">
               Transmit Message &rarr;
             </button>
           </form>
@@ -480,14 +480,14 @@
     </section>
 
     <!-- Footer -->
-    <footer style="padding-block: var(--space-xl); border-top: 1px solid var(--border-subtle); background-color: var(--bg-secondary);">
-      <div class="container flex-between" style="flex-wrap: wrap; gap: var(--space-md); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-muted);">
+    <footer class="studio-footer">
+      <div class="container footer-inner">
         <div>
           &copy; 2026 AAYUSH PANCHAL. ENGINEERED WITH VANILLA WEB STANDARDS.
         </div>
-        <div style="display: flex; gap: var(--space-lg);">
+        <div class="footer-links">
           <span>MUMBAI, IN [IST]</span>
-          <a href="#home" style="color: var(--highlight);">BACK TO TOP &uarr;</a>
+          <a href="#home" class="back-to-top">BACK TO TOP &uarr;</a>
         </div>
       </div>
     </footer>
@@ -496,14 +496,14 @@
   <!-- Deep-Dive Case Study Slide-Over Drawer Overlay -->
   <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
   <aside id="case-study-drawer" class="case-study-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
-    <button id="drawer-close-btn" class="btn-icon drawer-close-btn" aria-label="Close Case Study Drawer">
+    <button type="button" id="drawer-close-btn" class="btn-icon drawer-close-btn" aria-label="Close Case Study Drawer">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
 
-    <div style="margin-bottom: var(--space-xs); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--highlight);" id="drawer-category"></div>
-    <h2 id="drawer-title" style="font-size: var(--text-3xl); margin-bottom: var(--space-md);"></h2>
+    <div id="drawer-category" class="drawer-category">Case Study</div>
+    <h2 id="drawer-title" class="drawer-title">Project Architecture Deep-Dive</h2>
 
-    <div id="drawer-links" style="display: flex; gap: var(--space-sm); margin-bottom: var(--space-xl); flex-wrap: wrap;"></div>
+    <div id="drawer-links" class="drawer-links"></div>
 
     <div class="drawer-section">
       <span class="section-tag">01 // OVERVIEW</span>
@@ -518,8 +518,8 @@
     <div class="drawer-section">
       <span class="section-tag">03 // DELIVERED ARCHITECTURE</span>
       <p id="drawer-solution"></p>
-      <div style="margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--text-muted);">
-        <strong>Role & Ownership:</strong> <span id="drawer-role"></span>
+      <div class="drawer-role-wrapper">
+        <strong>Role &amp; Ownership:</strong> <span id="drawer-role"></span>
       </div>
     </div>
 
@@ -548,17 +548,16 @@
   </div>
 
   <!-- Developer Inspector Mode HUD -->
-  <div id="inspector-hud" class="inspector-hud" role="region" aria-label="Developer Inspector HUD">
+  <div id="inspector-hud" class="inspector-hud" role="status" aria-label="Developer Inspector HUD">
     <span id="inspector-fps" class="inspector-fps">60 FPS</span>
-    <span style="color: var(--border-strong);">|</span>
+    <span class="inspector-divider">|</span>
     <span id="inspector-dom">-- DOM Nodes</span>
-    <span style="color: var(--border-strong);">|</span>
+    <span class="inspector-divider">|</span>
     <span id="inspector-viewport">--x--</span>
-    <button class="inspector-close" style="color: var(--text-muted); padding-left: 6px;" aria-label="Close Inspector HUD">&times;</button>
+    <button type="button" class="inspector-close" aria-label="Close Inspector HUD">&times;</button>
   </div>
 
   <!-- Master ES Module Bootstrap -->
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
-

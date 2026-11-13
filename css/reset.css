@@ -11,6 +11,7 @@
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -moz-tab-size: 4;
   tab-size: 4;
   scroll-behavior: smooth;
@@ -46,6 +47,7 @@ input, button, textarea, select {
 
 button {
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
 }
 
