@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.5.2] — 2026-11-13
+
+### Fixed
+- **Editorial Watermark Proportional Scaling & 3-Way Clearance**:
+  - Calibrated `.hero-watermark` font size to `clamp(4.2rem, 9.8vw, 11.5rem)` and top position to `clamp(1rem, 2vw, 1.85rem)`.
+  - Added `padding-top: clamp(1rem, 2.5vw, 2.5rem)` to `.hero-right-col` to eliminate all watermark overlap across the left bio (`AAYUSH PANCHAL` + subtitle) and the right stats (`SEM 6` + `4`).
+  - Achieved verified positive clearance across all boundaries: +18px from top badge, +139px from left name, and +50px from right stats with zero text overlap.
+  - Bumped cache-busting assets to `?v=2.5.2`.
+
 ## [2.5.1] — 2026-11-13
 
 ### Fixed

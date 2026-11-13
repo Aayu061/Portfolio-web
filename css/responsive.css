@@ -157,9 +157,18 @@
    Editorial Poster Layout Responsive Rules
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .hero-watermark {
+    font-size: clamp(3.8rem, 13vw, 8.5rem);
+    top: 1rem;
+  }
+
   .hero-editorial-grid {
     grid-template-columns: 1.1fr 0.9fr;
     gap: var(--space-xl);
+  }
+
+  .hero-right-col {
+    padding-top: 0;
   }
 
   .hero-center-cutout {
@@ -227,8 +236,8 @@
   }
 
   .hero-watermark {
-    font-size: clamp(4.2rem, 15vw, 10rem);
-    top: clamp(3rem, 10vw, 4.5rem);
+    font-size: clamp(3.2rem, 13vw, 6.5rem);
+    top: 0.75rem;
   }
 
   .about-actions {

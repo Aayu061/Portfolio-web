@@ -1436,11 +1436,11 @@
 
 .hero-watermark {
   position: absolute;
-  top: clamp(4.5rem, 6.5vw, 7.5rem);
+  top: clamp(1rem, 2vw, 1.85rem);
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-display);
-  font-size: clamp(5.5rem, 17.5vw, 22rem);
+  font-size: clamp(4.2rem, 9.8vw, 11.5rem);
   line-height: 0.9;
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -1510,6 +1510,7 @@
   flex-direction: column;
   gap: var(--space-xl);
   padding-left: var(--space-md);
+  padding-top: clamp(1rem, 2.5vw, 2.5rem);
   z-index: 4;
 }
 
