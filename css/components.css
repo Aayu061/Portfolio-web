@@ -1436,12 +1436,12 @@
 
 .hero-watermark {
   position: absolute;
-  top: clamp(0.25rem, 1.5vw, 1.25rem);
+  top: clamp(4.5rem, 6.5vw, 7.5rem);
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-display);
   font-size: clamp(5.5rem, 17.5vw, 22rem);
-  line-height: 0.82;
+  line-height: 0.9;
   font-weight: 900;
   letter-spacing: 0.04em;
   color: var(--watermark-color);

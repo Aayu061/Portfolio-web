@@ -97,6 +97,7 @@
 - [x] **2026-11-13:** Master Swiss grid alignment overhaul (unified container datum lines across all sections), precision header scroll progress bar, platform-aware keyboard shortcut detection (Ctrl+K / ⌘K), live Mumbai IST telemetry clock, pulsing radar availability ping, bento architectural micro-tags, and mobile viewport harmonization.
 - [x] **2026-11-13:** Eliminated watermark outline overlap with availability badge pill by wrapping hero content in `.hero-content-wrapper` and establishing an automated 45px vertical safety clearance gap with a solid badge background.
 - [x] **2026-11-13:** Integrated authentic cyber developer "A" emblem across header navigation, preloader pulse animation, footer brand mark, and browser favicon.
+- [x] **2026-11-13:** Resolved font ascender bleed on Bebas Neue display watermark (77px positive clearance from availability pill) and added cache-busting query strings `?v=2.5.1`.
 
 ---
 

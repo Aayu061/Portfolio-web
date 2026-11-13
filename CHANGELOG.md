@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.5.1] — 2026-11-13
+
+### Fixed
+- **Resolved Bebas Neue Display Font Glyph Ascender Overlap**:
+  - Identified that Bebas Neue at 17.5vw with `line-height: 0.82` paints letter ascenders ~80px above the element box boundaries.
+  - Adjusted `.hero-watermark` to `top: clamp(4.5rem, 6.5vw, 7.5rem)` and `line-height: 0.9`, establishing an absolute 77px vertical clearance gap from the availability badge.
+  - Added cache-busting query strings `?v=2.5.1` to all CSS and JS asset links to prevent browsers from serving stale cached stylesheets.
+
 ## [2.5.0] — 2026-11-13
 
 ### Added & Enhanced
