@@ -1,0 +1,81 @@
+/* ==========================================================================
+   CSS DESIGN TOKENS — AAYUSH PANCHAL PORTFOLIO
+   Brand: Independent Technology Studio
+   Architecture: CSS Custom Properties
+   ========================================================================== */
+
+:root {
+  /* Brand Primitives (6-Color System) */
+  --color-midnight-navy: #161e2f;
+  --color-deep-slate: #242f49;
+  --color-steel-slate: #384358;
+  --color-warm-peach: #ffa586;
+  --color-crimson-red: #b51a2b;
+  --color-burgundy: #541a2e;
+
+  /* Extended Alpha Tints & Neutrals */
+  --color-white: #ffffff;
+  --color-warm-white: #fff5f0;
+  --color-warm-surface: #ffe4d9;
+  --color-charcoal-muted: #6c6670;
+  --color-slate-light: #c2c6d0;
+  --color-cream-text: #f8f0ed;
+
+  /* Typography Stacks */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Fluid Font Scales */
+  --text-2xs: clamp(0.7rem, 0.65rem + 0.2vw, 0.75rem);
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.825rem + 0.25vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  --text-3xl: clamp(2rem, 1.75rem + 1.25vw, 2.75rem);
+  --text-4xl: clamp(2.5rem, 2.1rem + 2vw, 3.75rem);
+  --text-hero: clamp(3.25rem, 2.75rem + 3.75vw, 5.75rem);
+
+  /* Fluid Spacing Units */
+  --space-3xs: 0.125rem; /* 2px */
+  --space-2xs: 0.25rem;  /* 4px */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 0.75rem;   /* 12px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2rem;      /* 32px */
+  --space-2xl: 3rem;     /* 48px */
+  --space-3xl: 4.5rem;   /* 72px */
+  --space-section: clamp(4.5rem, 8vw, 9.5rem);
+
+  /* Border Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions & Timing Curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 150ms var(--ease-out-expo);
+  --transition-normal: 250ms var(--ease-out-expo);
+  --transition-slow: 450ms var(--ease-out-expo);
+
+  /* Layering (z-index) */
+  --z-base: 1;
+  --z-nav: 100;
+  --z-inspector: 200;
+  --z-palette: 300;
+  --z-drawer: 400;
+  --z-preloader: 500;
+
+  /* Default Dynamic Cursor Lighting */
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+}
+

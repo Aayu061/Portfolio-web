@@ -1,0 +1,93 @@
+[
+  {
+    "id": "j-01",
+    "period": "2024 — Present",
+    "year": 2024,
+    "title": "Computer Science & Engineering",
+    "organization": "University Engineering Curriculum",
+    "category": "EDUCATION",
+    "description": "Deep foundational study in Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems (RDBMS), Operating Systems, and Computer Networks.",
+    "highlights": [
+      "Rigorous problem solving and algorithmic analysis in C++, Java, and Python.",
+      "Comprehensive relational database design and SQL query optimization.",
+      "Software engineering lifecycle methodologies and system design."
+    ],
+    "tags": ["DSA", "RDBMS", "Computer Networks", "OOP"]
+  },
+  {
+    "id": "j-02",
+    "period": "2024 — 2025",
+    "year": 2024,
+    "title": "Full-Stack SaaS Platform Architecture",
+    "organization": "Place Your Service (PYS)",
+    "category": "PROJECT",
+    "description": "Architected and delivered Place Your Service, a complete enterprise operational management platform for air-conditioning maintenance workflows.",
+    "highlights": [
+      "Designed PostgreSQL relational schemas with Supabase Row Level Security.",
+      "Implemented role-based access for Admins, Staff, Technicians, and Clients.",
+      "Integrated decoupled deployment across Vercel and Render."
+    ],
+    "tags": ["PostgreSQL", "Supabase", "TypeScript", "Node.js", "Render"]
+  },
+  {
+    "id": "j-03",
+    "period": "2025",
+    "year": 2025,
+    "title": "Enterprise Commercial Website & Dispatch Redesign",
+    "organization": "Extreme Sales & Services (V2.0)",
+    "category": "PROJECT",
+    "description": "Redesigned customer portals and operational dispatch pipelines for a live commercial enterprise HVAC contractor.",
+    "highlights": [
+      "Delivered production frontend on Vercel and Express API web service on Render.",
+      "Built real-time inquiry management with Google Cloud Firebase.",
+      "Maintained 99.9% uptime and sub-second page performance."
+    ],
+    "tags": ["Production", "Firebase", "Node.js", "Express", "Vercel"]
+  },
+  {
+    "id": "j-04",
+    "period": "2025 — 2026",
+    "year": 2025,
+    "title": "AI-Powered Cinematic Commerce",
+    "organization": "AI Café Platform",
+    "category": "PROJECT",
+    "description": "Explored modern interaction design and AI integration by creating AI Café, featuring a 192-frame canvas scroll engine and intent-aware AI Barista.",
+    "highlights": [
+      "Implemented a 192-frame WebP canvas animation engine running at 60fps.",
+      "Integrated Gemini LLM API with deterministic catalog validation.",
+      "Constructed custom drink builder with live dietary allergy filters."
+    ],
+    "tags": ["Gemini API", "Canvas 2D", "Interactive Motion", "Firestore"]
+  },
+  {
+    "id": "j-05",
+    "period": "2026",
+    "year": 2026,
+    "title": "Relational Financial Architecture & Migrations",
+    "organization": "Nexa Bank",
+    "category": "PROJECT",
+    "description": "Engineered a secure, full-stack loan management platform with pure SQL database migrations, JWT authentication, and automated amortization schedules.",
+    "highlights": [
+      "Wrote structured init.sql migration scripts for PostgreSQL.",
+      "Built reducing-balance EMI loan calculation algorithms.",
+      "Enforced administrative permission middleware and audit tracking."
+    ],
+    "tags": ["PostgreSQL", "SQL Migrations", "Express.js", "JWT"]
+  },
+  {
+    "id": "j-06",
+    "period": "2026",
+    "year": 2026,
+    "title": "Independent Technology Studio Portfolio",
+    "organization": "Aayush Panchal Studio",
+    "category": "MILESTONE",
+    "description": "Engineered a zero-framework personal developer portfolio establishing an authentic independent technology studio identity.",
+    "highlights": [
+      "Built with pure Vanilla HTML5, CSS custom properties, and modern ES6+.",
+      "Implemented interactive SVG node visualizer, Cmd+K palette, and Web Audio synthesizer.",
+      "Authored 28-file Universal Website Documentation Framework."
+    ],
+    "tags": ["Vanilla Web", "GSAP", "Web Audio API", "Architecture"]
+  }
+]
+

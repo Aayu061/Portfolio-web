@@ -1,0 +1,57 @@
+[
+  {
+    "category": "01 — Frontend Engineering",
+    "title": "Frontend Engineering",
+    "description": "Crafting high-performance, accessible, and responsive user interfaces with semantic markup, fluid typography, and hardware-accelerated motion.",
+    "skills": [
+      { "name": "HTML5 & Semantic Architecture", "level": "Advanced" },
+      { "name": "Modern CSS3 (Tokens, Grid, Flexbox)", "level": "Advanced" },
+      { "name": "Modern JavaScript (ES6+ / 2024)", "level": "Advanced" },
+      { "name": "TypeScript", "level": "Proficient" },
+      { "name": "GSAP & ScrollTrigger Choreography", "level": "Advanced" },
+      { "name": "HTML5 Canvas 2D & SVG Graphics", "level": "Proficient" },
+      { "name": "WCAG 2.1 AA Accessibility Standards", "level": "Proficient" },
+      { "name": "Responsive Design & Mobile Touch", "level": "Advanced" }
+    ]
+  },
+  {
+    "category": "02 — Backend Engineering",
+    "title": "Backend Engineering",
+    "description": "Designing secure, modular RESTful APIs, role-based authentication layers, deterministic state machines, and microservice architectures.",
+    "skills": [
+      { "name": "Node.js & Express.js", "level": "Advanced" },
+      { "name": "RESTful API Design & Versioning", "level": "Advanced" },
+      { "name": "JWT Authentication & Security Middleware", "level": "Proficient" },
+      { "name": "Role-Based Access Control (RBAC)", "level": "Proficient" },
+      { "name": "State Machines & Lifecycle Validation", "level": "Proficient" },
+      { "name": "Webhooks & External Service Integration", "level": "Proficient" }
+    ]
+  },
+  {
+    "category": "03 — Database Architecture",
+    "title": "Database Architecture",
+    "description": "Structuring normalized relational schemas, authoring immutable SQL migrations, enforcing row-level security, and scaling query performance.",
+    "skills": [
+      { "name": "PostgreSQL Relational Design", "level": "Advanced" },
+      { "name": "Supabase & Row Level Security (RLS)", "level": "Proficient" },
+      { "name": "Google Cloud Firebase & Firestore", "level": "Proficient" },
+      { "name": "SQL Migrations & Schema Scripting", "level": "Advanced" },
+      { "name": "Foreign Keys, Constraints & Indexes", "level": "Advanced" },
+      { "name": "ACID Transactions & Data Integrity", "level": "Proficient" }
+    ]
+  },
+  {
+    "category": "04 — AI & Deployment",
+    "title": "AI & Deployment",
+    "description": "Bridging full-stack code with LLM APIs, prompt engineering, CI/CD pipelines, and cloud edge hosting platforms.",
+    "skills": [
+      { "name": "Google Gemini API & Intent Engines", "level": "Proficient" },
+      { "name": "AI-Assisted Engineering Workflows", "level": "Advanced" },
+      { "name": "Git & GitHub Version Control", "level": "Advanced" },
+      { "name": "Vercel Edge CDN Deployment", "level": "Advanced" },
+      { "name": "Render Web Services Deployment", "level": "Proficient" },
+      { "name": "Lighthouse & Core Web Vitals Optimization", "level": "Advanced" }
+    ]
+  }
+]
+

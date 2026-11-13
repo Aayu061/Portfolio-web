@@ -1,0 +1,84 @@
+/* ==========================================================================
+   ANIMATIONS & KEYFRAME TRANSITIONS
+   ========================================================================== */
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes pulse-packet {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 165, 134, 0.12) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Preloader split animation classes */
+.preloader-curtain {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: var(--color-midnight-navy);
+  transition: transform 700ms var(--ease-out-expo);
+}
+
+.preloader-curtain--top {
+  top: 0;
+  transform-origin: top;
+}
+
+.preloader-curtain--bottom {
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+.preloader-overlay.dismiss-curtains .preloader-curtain--top {
+  transform: translateY(-100%);
+}
+
+.preloader-overlay.dismiss-curtains .preloader-curtain--bottom {
+  transform: translateY(100%);
+}
+
