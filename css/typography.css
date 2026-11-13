@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 0.88;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 

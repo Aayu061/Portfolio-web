@@ -158,23 +158,16 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .hero-editorial-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-  }
-
-  .hero-center-portrait {
-    grid-column: 1 / -1;
-    order: -1;
-    margin-bottom: var(--space-lg);
-  }
-
-  .hero-portrait-frame {
-    height: clamp(380px, 50vh, 520px);
-  }
-
-  .projects-grid-editorial {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+  }
+
+  .hero-center-cutout {
+    order: -1;
+    margin-bottom: var(--space-lg);
+    max-width: 360px;
+    height: clamp(380px, 50vh, 520px);
+    margin-inline: auto;
   }
 
   .bento-section-editorial {
@@ -207,7 +200,7 @@
   .hero-stat-item {
     flex: 1 1 120px;
     border-bottom: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid var(--border-subtle);
     padding-right: var(--space-sm);
   }
 

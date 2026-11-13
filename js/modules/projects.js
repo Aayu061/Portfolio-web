@@ -25,7 +25,7 @@ export async function initProjects() {
     console.error('Failed to load projects.json:', err);
   }
 
-  // 2. Open Case Study Drawer Handler
+  // 2. Open Case Study Drawer Handler (Click & Keyboard Enter/Space)
   document.addEventListener('click', (e) => {
     const trigger = e.target.closest('[data-action="open-case-study"], .project-card-editorial');
     if (trigger) {
@@ -34,6 +34,21 @@ export async function initProjects() {
       if (project) {
         lastFocusedElement = trigger;
         openDrawer(project, drawer, backdrop);
+      }
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const trigger = e.target.closest('.project-card-editorial');
+      if (trigger && document.activeElement === trigger) {
+        e.preventDefault();
+        const projectId = trigger.getAttribute('data-project-id');
+        const project = projectsData.find(p => p.id === projectId);
+        if (project) {
+          lastFocusedElement = trigger;
+          openDrawer(project, drawer, backdrop);
+        }
       }
     }
   });

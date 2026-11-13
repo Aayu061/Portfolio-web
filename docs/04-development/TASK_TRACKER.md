@@ -90,6 +90,7 @@
 - [x] **2026-11-13:** Interactive in-browser PDF Resume preview modal added with zero-warning compliance.
 - [x] **2026-11-13:** Integrated authentic portrait photo and AI-generated 3D developer avatar with live interactive switcher.
 - [x] **2026-11-13:** Major visual transformation to award-winning luxury editorial poster design (giant red PORTFOLIO watermark, hero subject overlap, 3-card project showcase, and bento grid).
+- [x] **2026-11-13:** Fresher Semester 6 role positioning, authentic cutout borderless subject, 4 standalone projects in infinite horizontal loop marquee, deep Dark/Light mode overhaul, and zero-error linter validation.
 
 ---
 

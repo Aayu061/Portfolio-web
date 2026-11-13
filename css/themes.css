@@ -32,6 +32,10 @@
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.75);
 
+  --watermark-color: #D31027;
+  --watermark-stroke: none;
+  --watermark-opacity: 0.95;
+
   --grid-line: rgba(255, 255, 255, 0.03);
   --node-canvas-bg: #07080b;
   --node-circle-stroke: #D31027;
@@ -39,37 +43,41 @@
   --node-pulse-color: #D31027;
 }
 
-/* Light Theme */
+/* Light Theme (Editorial Ivory / High Contrast) */
 [data-theme="light"] {
-  --bg-primary: var(--color-warm-white);
-  --bg-secondary: var(--color-white);
-  --bg-tertiary: var(--color-warm-surface);
-  --bg-card: rgba(255, 255, 255, 0.92);
-  --bg-card-hover: #ffffff;
-  --bg-glass: rgba(255, 245, 240, 0.86);
-  --bg-overlay: rgba(36, 47, 73, 0.6);
+  --bg-primary: #FAF7F5;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F2ECE7;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F6F1EC;
+  --bg-glass: rgba(250, 247, 245, 0.9);
+  --bg-overlay: rgba(14, 15, 20, 0.75);
 
-  --text-primary: var(--color-deep-slate);
-  --text-secondary: var(--color-charcoal-muted);
-  --text-muted: #8c8691;
+  --text-primary: #111216;
+  --text-secondary: #484B56;
+  --text-muted: #6E7280;
 
-  --accent-primary: var(--color-crimson-red);
-  --accent-hover: #981523;
-  --highlight: #d9623b;
-  --highlight-glow: rgba(217, 98, 59, 0.2);
+  --accent-primary: #D31027;
+  --accent-hover: #b51a2b;
+  --highlight: #D31027;
+  --highlight-glow: rgba(211, 16, 39, 0.18);
 
-  --border-subtle: rgba(36, 47, 73, 0.09);
-  --border-strong: rgba(36, 47, 73, 0.18);
-  --border-accent: rgba(181, 26, 43, 0.35);
+  --border-subtle: rgba(17, 18, 22, 0.09);
+  --border-strong: rgba(17, 18, 22, 0.18);
+  --border-accent: rgba(211, 16, 39, 0.35);
 
-  --shadow-sm: 0 2px 8px rgba(36, 47, 73, 0.05);
-  --shadow-md: 0 8px 24px rgba(36, 47, 73, 0.08);
-  --shadow-lg: 0 16px 48px rgba(36, 47, 73, 0.12);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.1);
 
-  --grid-line: rgba(36, 47, 73, 0.05);
-  --node-canvas-bg: #fff5f0;
-  --node-circle-stroke: #d9623b;
-  --node-link-stroke: rgba(217, 98, 59, 0.28);
-  --node-pulse-color: #b51a2b;
+  --watermark-color: transparent;
+  --watermark-stroke: 2px rgba(211, 16, 39, 0.45);
+  --watermark-opacity: 0.85;
+
+  --grid-line: rgba(17, 18, 22, 0.04);
+  --node-canvas-bg: #FAF7F5;
+  --node-circle-stroke: #D31027;
+  --node-link-stroke: rgba(211, 16, 39, 0.2);
+  --node-pulse-color: #D31027;
 }
 

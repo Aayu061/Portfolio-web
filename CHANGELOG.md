@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.0] — 2026-11-13
+
+### Changed & Enhanced
+- **Fresher & Internship/Part-Time Role Positioning**:
+  - Replaced fabricated senior metrics (`3+ years experience`, `15+ projects completed`) with genuine fresher credentials:
+    - `SEM 6` (Final Year B.Sc. Computer Science at Shri D.D. Vispute College, University of Mumbai, Class of 2027).
+    - `4` (Production Full-Stack Web Applications).
+    - `100%` (Available for Internship / Part-Time Roles).
+  - Aligned hero top-meta, subtitle, and contact section calls-to-action to highlight immediate availability for internship and part-time developer positions.
+- **Infinite Horizontal Loop Marquee Carousel**:
+  - Separated combined projects into 4 standalone, distinct project cards:
+    - `01` **Place Your Service** (AC & HVAC Operations SaaS)
+    - `02` **Extreme Sales & Services** (Commercial HVAC Enterprise Platform)
+    - `03` **AI Café** (Gemini-Powered Autonomous Barista)
+    - `04` **Nexa Bank** (Full-Stack Loan & Financial SaaS)
+  - Created zero-seam infinite horizontal marquee animation with soft gradient edge masks and buttery pause-on-hover / focus-within interactions.
+  - Added full keyboard accessibility (`Enter` and `Space` triggers) for opening deep-dive case studies.
+- **Deep Dark Mode & Light Mode Contrast Overhaul**:
+  - Completely redesigned Light Mode tokens: converted hardcoded whites to dynamic `var(--text-primary)`, mapped card backgrounds to `var(--bg-card)` and `var(--bg-secondary)`.
+  - Introduced `--watermark-color` and `--watermark-stroke` for an editorial outline `PORTFOLIO` watermark in Light Mode.
+  - Preserved the solid Crimson Quote Card with signature brand red styling across all themes.
+- **Authentic Cutout Presentation**:
+  - Permanently removed AI-generated placeholder portrait and avatar.
+  - Implemented borderless, box-free hero subject container using Aayush's authentic cutout image with subtle interactive tilt and depth.
+- **Bug & Linter Elimination**:
+  - Fixed GSAP CDN SRI hash mismatch in `index.html`.
+  - Added SVG favicon to eliminate 404 console errors.
+  - Added accessible `name` and `aria-label` to command search input.
+  - 100% clean validation across `html-validate` with 0 errors and 0 warnings.
+
 ## [2.0.0] — 2026-11-13
 
 ### Changed & Redesigned
