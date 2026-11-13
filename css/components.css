@@ -1342,7 +1342,8 @@
   font-size: var(--text-2xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-primary);
+  font-weight: 600;
   margin-bottom: var(--space-md);
   border-bottom: 1px solid var(--border-subtle);
   padding-bottom: var(--space-xs);
@@ -1350,14 +1351,28 @@
   z-index: 3;
 }
 
-.hero-top-meta .meta-avail {
-  color: var(--color-crimson-red);
-  font-weight: 600;
+.meta-avail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 83, 118, 0.12);
+  border: 1px solid rgba(255, 83, 118, 0.35);
+  color: var(--hero-intro-color);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+[data-theme="light"] .meta-avail-badge {
+  background: rgba(211, 16, 39, 0.08);
+  border-color: rgba(211, 16, 39, 0.3);
+  color: #D31027;
 }
 
 .hero-watermark {
   position: absolute;
-  top: 10%;
+  top: 17%;
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-display);
@@ -1936,4 +1951,70 @@
 .btn-cta {
   padding: 0.85rem 2rem;
   font-size: var(--text-sm);
+}
+
+/* ==========================================================================
+   CUSTOM DEVELOPER & GAMER MOUSE CURSOR
+   ========================================================================== */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--hero-intro-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.1s ease;
+  will-change: transform;
+}
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--hero-intro-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.25s ease, width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+  box-shadow: 0 0 16px rgba(255, 83, 118, 0.25);
+}
+
+.cursor-visible {
+  opacity: 1;
+}
+
+.cursor-follower.cursor-hover {
+  width: 58px;
+  height: 58px;
+  background-color: rgba(211, 16, 39, 0.14);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 24px rgba(211, 16, 39, 0.45);
+}
+
+.cursor-follower.cursor-active {
+  transform: translate(-50%, -50%) scale(0.85);
+  background-color: rgba(211, 16, 39, 0.28);
+}
+
+@media (pointer: fine) {
+  body, a, button, input, textarea, select {
+    cursor: none !important;
+  }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-follower {
+    display: none !important;
+  }
 }

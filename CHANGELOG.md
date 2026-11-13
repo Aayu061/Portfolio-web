@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.3.0] — 2026-11-13
+
+### Changed & Enhanced
+- **Hero Top Meta Text Contrast Overhaul**:
+  - Lowered the `.hero-watermark` position from `10%` to `17%` to eliminate the red-on-red background collision.
+  - Made the left metadata (`B.SC. COMPUTER SCIENCE (SEM 6) // DEV // LVL.99`) crisp pure white (`#ffffff` / `var(--text-primary)`).
+  - Encapsulated availability text in an illuminated badge pill (`.meta-avail-badge`) with an active green/coral indicator dot, providing 100% legibility across dark and light modes.
+- **Removed Unused Audio Feature**:
+  - Removed the procedural audio speaker button from the header navigation.
+  - Safely removed the Web Audio synthesizer initialization from `js/main.js` and deprecated `js/modules/audio.js`.
+- **Bespoke Custom Developer & Gamer Mouse Cursor**:
+  - Implemented high-performance, dual-layer hardware-accelerated cursor (`.cursor-dot` + `.cursor-follower`) in `js/modules/cursor.js`.
+  - Added smooth 60fps/120fps lerp follower physics, interactive hover expansions over clickable elements (`a`, `button`, `.project-card-editorial`, `input`), and tactile click micro-pulses.
+  - Configured automatic bypass for touchscreens (`pointer: coarse`) and reduced motion preferences.
+
 ## [2.2.0] — 2026-11-13
 
 ### Changed & Enhanced

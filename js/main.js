@@ -4,7 +4,7 @@
  */
 
 import { initTheme } from './modules/theme.js';
-import { initAudio } from './modules/audio.js';
+import { initCursor } from './modules/cursor.js';
 import { initPreloader } from './modules/preloader.js';
 import { initNavigation } from './modules/navigation.js';
 import { initHeroVisual } from './modules/hero-visual.js';
@@ -19,7 +19,7 @@ import { initPortrait } from './modules/portrait.js';
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Core State & Theme Setup
   initTheme();
-  initAudio();
+  initCursor();
 
   // 2. Navigation & Preloader
   initNavigation();
