@@ -227,8 +227,8 @@
   }
 
   .hero-watermark {
-    font-size: clamp(4.5rem, 16vw, 12rem);
-    top: 22%;
+    font-size: clamp(4.2rem, 15vw, 10rem);
+    top: 0.5rem;
   }
 
   .about-actions {

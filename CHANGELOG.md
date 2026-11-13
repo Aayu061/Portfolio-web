@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.4.1] — 2026-11-13
+
+### Fixed
+- **Eliminated Hero Watermark & Availability Badge Outline Overlap**:
+  - Restructured hero markup with `.hero-content-wrapper` to anchor `.hero-watermark` (`DEVELOPER`) strictly below `.hero-top-meta`, ensuring an automatic 45px+ vertical clearance gap under all viewport heights and aspect ratios.
+  - Gave `.meta-avail-badge` a solid surface background (`var(--bg-card)`) with `box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)` and `z-index: 5` to prevent text or outline collisions with background typography.
+
 ## [2.4.0] — 2026-11-13
 
 ### Changed & Enhanced
