@@ -188,10 +188,21 @@
           <!-- Portrait Frame -->
           <div class="portrait-frame">
             <div class="portrait-image-wrapper">
-              <div class="portrait-placeholder-graphic">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                <div class="portrait-title">AAYUSH PANCHAL</div>
-                <div class="portrait-subtext">STUDIO LEAD / FULL-STACK</div>
+              <img
+                id="portrait-img"
+                src="assets/images/profile/aayush_portrait.jpg"
+                alt="Aayush Panchal — Full-Stack Developer &amp; Studio Lead"
+                class="portrait-img"
+                width="400"
+                height="500"
+                loading="eager"
+                data-mode="photo"
+              >
+              <div class="portrait-overlay">
+                <div class="portrait-tag-pill" id="portrait-mode-tag">STUDIO // PHOTO</div>
+                <button type="button" id="portrait-toggle-btn" class="portrait-toggle-btn" aria-label="Toggle between Portrait Photo and Stylized 3D Avatar">
+                  View 3D Avatar ✦
+                </button>
               </div>
             </div>
             <div class="portrait-meta">

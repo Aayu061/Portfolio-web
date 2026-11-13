@@ -83,3 +83,4 @@ export function initResumePreview() {
   eventBus.on('resume:preview:open', openResume);
   eventBus.on('resume:preview:close', closeResume);
 }
+

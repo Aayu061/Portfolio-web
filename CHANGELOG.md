@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.0] — 2026-11-13
 
 ### Added
+- **Profile Portrait & 3D Avatar Switcher**:
+  - Integrated high-resolution studio portrait photo ([assets/images/profile/aayush_portrait.jpg](file:///c:/Users/aayup/Desktop/Portfolio%20website/assets/images/profile/aayush_portrait.jpg)) into the About section portrait frame.
+  - Generated and integrated a matching stylized 3D digital developer avatar ([assets/images/profile/aayush_avatar.jpg](file:///c:/Users/aayup/Desktop/Portfolio%20website/assets/images/profile/aayush_avatar.jpg)).
+  - Implemented interactive dual-mode toggle switch (`View 3D Avatar ✦` / `View Real Photo ✦`) with smooth opacity scaling transitions, asset preloading, and procedural audio cues via [js/modules/portrait.js](file:///c:/Users/aayup/Desktop/Portfolio%20website/js/modules/portrait.js).
 - **Interactive Resume PDF Preview Modal**:
   - Glassmorphic modal with embedded PDF viewer (`<object>` + `<iframe>`) for immediate in-browser reading of verified `Aayush_Panchal_Resume.pdf`.
   - Accessible focus trapping, keyboard navigation (`Escape` to close, `Tab` cycle), and procedural micro-audio cues.

@@ -14,6 +14,7 @@ import { initInspector } from './modules/inspector.js';
 import { initJourney } from './modules/journey.js';
 import { initContact } from './modules/contact.js';
 import { initResumePreview } from './modules/resume-preview.js';
+import { initPortrait } from './modules/portrait.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Core State & Theme Setup
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Interactive Engines
   initHeroVisual();
   initProjects();
+  initPortrait();
   initResumePreview();
   initCommandPalette();
   initInspector();

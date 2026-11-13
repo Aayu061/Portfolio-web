@@ -367,6 +367,66 @@
   overflow: hidden;
 }
 
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-normal), filter var(--transition-normal), opacity var(--transition-normal);
+  filter: contrast(1.02) brightness(0.98);
+  display: block;
+}
+
+.portrait-frame:hover .portrait-img {
+  transform: scale(1.02);
+}
+
+.portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(22, 30, 47, 0) 60%, rgba(22, 30, 47, 0.85) 100%);
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: var(--space-md);
+}
+
+.portrait-tag-pill {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.65rem;
+  background-color: rgba(22, 30, 47, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-pill);
+  color: var(--highlight);
+  font-weight: 600;
+}
+
+.portrait-toggle-btn {
+  pointer-events: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  padding: 0.25rem 0.6rem;
+  background-color: rgba(22, 30, 47, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.portrait-toggle-btn:hover {
+  color: var(--highlight);
+  border-color: var(--highlight);
+}
+
 .portrait-placeholder-graphic {
   text-align: center;
   padding: var(--space-md);
