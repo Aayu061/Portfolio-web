@@ -9,7 +9,7 @@
     "technologies": ["TypeScript", "Node.js", "Express", "Supabase", "PostgreSQL", "Vercel", "Render"],
     "links": {
       "github": "https://github.com/Aayu061/place-your-service",
-      "live": "https://github.com/Aayu061/place-your-service"
+      "live": "https://place-your-service.vercel.app/"
     },
     "caseStudy": {
       "overview": "Place Your Service is an internal enterprise operational web platform designed for an air-conditioning sales and service business. It replaces fragmented WhatsApp chats and disconnected Excel spreadsheets with a single, auditable operational workspace.",

@@ -72,7 +72,7 @@ export function initContact() {
       // Fallback gracefully to direct mailto link
       showStatus(`
         Unable to transmit via webhook. 
-        <a href="mailto:aayushpanchal.dev@gmail.com?subject=${encodeURIComponent(projectType + ' Inquiry from ' + name)}&body=${encodeURIComponent(message)}" 
+        <a href="mailto:aayu.panchal06@gmail.com?subject=${encodeURIComponent(projectType + ' Inquiry from ' + name)}&body=${encodeURIComponent(message)}" 
            style="text-decoration: underline; color: var(--highlight); font-weight: 600;">
            Click here to send directly via Email Client &rarr;
         </a>

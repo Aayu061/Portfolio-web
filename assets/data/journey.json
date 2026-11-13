@@ -1,18 +1,18 @@
 [
   {
     "id": "j-01",
-    "period": "2024 — Present",
+    "period": "2024 — 2027",
     "year": 2024,
-    "title": "Computer Science & Engineering",
-    "organization": "University Engineering Curriculum",
+    "title": "B.Sc. in Computer Science (Third Year)",
+    "organization": "Shri D.D. Vispute College of Commerce, Science and Management — University of Mumbai",
     "category": "EDUCATION",
-    "description": "Deep foundational study in Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems (RDBMS), Operating Systems, and Computer Networks.",
+    "description": "Third-year Computer Science curriculum specializing in Full-Stack Web Development, Relational Database Management Systems (PostgreSQL), RESTful API Engineering, and Software Design.",
     "highlights": [
-      "Rigorous problem solving and algorithmic analysis in C++, Java, and Python.",
-      "Comprehensive relational database design and SQL query optimization.",
-      "Software engineering lifecycle methodologies and system design."
+      "Building and deploying production full-stack web applications on Vercel and Render.",
+      "Comprehensive relational schema modeling and PostgreSQL database integration.",
+      "Hands-on authentication and Role-Based Access Control (RBAC) implementation."
     ],
-    "tags": ["DSA", "RDBMS", "Computer Networks", "OOP"]
+    "tags": ["Full-Stack", "PostgreSQL", "Node.js", "B.Sc. CS"]
   },
   {
     "id": "j-02",
