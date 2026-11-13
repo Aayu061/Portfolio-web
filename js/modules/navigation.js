@@ -12,14 +12,25 @@ export function initNavigation() {
   const navContainer = document.querySelector('.nav-links');
   const sections = document.querySelectorAll('section[id]');
 
-  // 1. Sticky Header Shrink
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+  // 1. Sticky Header Shrink & Precision Scroll Progress Bar
+  const progressBar = document.getElementById('scroll-progress-bar');
+  const updateScroll = () => {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (scrollY > 40) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
-  }, { passive: true });
+
+    if (progressBar) {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+      progressBar.style.width = `${Math.min(100, Math.max(0, pct))}%`;
+    }
+  };
+
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  updateScroll();
 
   // 2. Active Scroll Spy (IntersectionObserver)
   if ('IntersectionObserver' in window) {
@@ -76,5 +87,27 @@ export function initNavigation() {
     document.documentElement.style.setProperty('--cursor-x', `${e.clientX}px`);
     document.documentElement.style.setProperty('--cursor-y', `${e.clientY}px`);
   }, { passive: true });
+
+  // 6. Live Mumbai IST Telemetry Clock
+  const liveTimeEl = document.getElementById('footer-live-time');
+  if (liveTimeEl) {
+    const updateTime = () => {
+      try {
+        const now = new Date();
+        const istFormatter = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Kolkata',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        });
+        const istTime = istFormatter.format(now);
+        liveTimeEl.textContent = `MUMBAI, IN [${istTime} IST] • READY`;
+      } catch (err) {
+        liveTimeEl.textContent = 'MUMBAI, IN [IST] • READY';
+      }
+    };
+    updateTime();
+    setInterval(updateTime, 30000);
+  }
 }
 

@@ -187,8 +187,20 @@ export function initCommandPalette() {
     }
   });
 
-  // Trigger button click handlers
-  triggers.forEach(t => t.addEventListener('click', openPalette));
+  // Trigger button click handlers & platform-aware keyboard shortcut labeling
+  const isMac = /(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent || navigator.platform || '');
+  triggers.forEach(t => {
+    const keySpan = t.querySelector('.cmd-pill-key, span');
+    if (keySpan && (keySpan.textContent.includes('Cmd+K') || keySpan.textContent.includes('Ctrl+K'))) {
+      keySpan.textContent = isMac ? '⌘K' : 'Ctrl+K';
+    }
+    t.addEventListener('click', openPalette);
+  });
+
+  if (input) {
+    input.placeholder = isMac ? 'Type a command or search project (⌘K)...' : 'Type a command or search project (Ctrl+K)...';
+  }
+
   backdrop?.addEventListener('click', (e) => {
     if (e.target === backdrop) closePalette();
   });

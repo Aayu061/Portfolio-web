@@ -215,3 +215,63 @@
   }
 }
 
+@media (max-width: 640px) {
+  .hero-top-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .meta-avail-badge {
+    align-self: flex-start;
+  }
+
+  .hero-watermark {
+    font-size: clamp(4.5rem, 16vw, 12rem);
+    top: 22%;
+  }
+
+  .about-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-display-name {
+    font-size: clamp(2.8rem, 13vw, 4.2rem);
+    line-height: 0.88;
+  }
+
+  .hero-stat-num {
+    font-size: 2.75rem;
+  }
+
+  .projects-header-editorial {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .contact-headline-editorial {
+    font-size: clamp(2.5rem, 11vw, 3.8rem);
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+}
+

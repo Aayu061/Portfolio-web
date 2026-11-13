@@ -101,7 +101,8 @@
 
   <!-- Persistent Glassmorphic Header Navigation -->
   <header class="studio-header">
-    <div class="container-wide studio-header__inner">
+    <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+    <div class="container studio-header__inner">
       <a href="#home" class="brand-wordmark" aria-label="Aayush Panchal Portfolio Home">
         <span>Aayush Panchal</span>
         <span class="brand-tag">DEV.01</span>
@@ -115,12 +116,12 @@
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
-      <!-- Utilities (Command Palette, Audio, Theme, Mobile Hamburger) -->
+      <!-- Utilities (Command Palette, Theme, Mobile Hamburger) -->
       <div class="nav-utilities">
         <!-- Command Palette Pill -->
         <button type="button" class="cmd-pill" data-action="open-command-palette" aria-label="Open Command Palette">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Cmd+K</span>
+          <span class="cmd-pill-key">Cmd+K</span>
         </button>
 
         <!-- Dark / Light Theme Toggle -->
@@ -378,6 +379,7 @@
         <div class="bento-section-editorial">
           <!-- Column 1: Education & Skills -->
           <div class="bento-card-editorial">
+            <span class="bento-micro-tag">01 // ACADEMICS &amp; TECH STACK</span>
             <h3 class="bento-card-title">EDUCATION &amp; SKILLS</h3>
 
             <div class="edu-item-editorial">
@@ -410,6 +412,7 @@
 
           <!-- Column 2: Work Process Timeline -->
           <div class="bento-card-editorial">
+            <span class="bento-micro-tag">02 // ENGINEERING METHODOLOGY</span>
             <h3 class="bento-card-title">WORK PROCESS</h3>
 
             <div class="process-timeline">
@@ -477,6 +480,7 @@
 
           <!-- Column 3: Solid Crimson Red Quote Card -->
           <div class="bento-card-editorial bento-card-crimson">
+            <span class="bento-micro-tag bento-micro-tag--crimson">03 // PHILOSOPHY &amp; MANIFESTO</span>
             <div class="quote-giant-mark">&ldquo;</div>
             <div class="quote-body-text">
               Good engineering is not just how it looks, but how it performs, scales, and endures.
@@ -556,7 +560,7 @@
           &copy; 2026 AAYUSH PANCHAL. ENGINEERED WITH VANILLA WEB STANDARDS.
         </div>
         <div class="footer-links">
-          <span>MUMBAI, IN [IST]</span>
+          <span id="footer-live-time" class="footer-live-time">MUMBAI, IN [IST] &bull; READY</span>
           <a href="#home" class="back-to-top">BACK TO TOP &uarr;</a>
         </div>
       </div>

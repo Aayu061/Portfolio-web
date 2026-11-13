@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.4.0] — 2026-11-13
+
+### Changed & Enhanced
+- **Master Swiss Grid & Website Alignment Standardization**:
+  - Unified header container width to match the main sections (`.container` bounded at `min(94vw, 1760px)`), producing an unbroken vertical datum line from the header wordmark down to the footer copyright.
+  - Aligned hero column baselines (buttons, photo cutout, and stat stack) and contact section grid elements for optical symmetry across high-resolution displays.
+- **Precision Scroll Progress Tracker**:
+  - Engineered a 2px crimson/coral gradient scroll progress bar (`.scroll-progress-bar`) at the bottom edge of the sticky glassmorphic header, dynamically tracking scroll depth from 0% to 100%.
+- **Platform-Aware Keyboard Shortcut Display**:
+  - Added OS detection in `js/modules/command-palette.js` to render `Ctrl+K` for Windows/Linux and `⌘K` / `Cmd+K` for macOS in the command palette pill and input placeholders.
+- **Live Mumbai IST Telemetry Clock**:
+  - Integrated real-time Indian Standard Time clock (`MUMBAI, IN [HH:MM IST] • READY`) in the footer via `Intl.DateTimeFormat`, updating automatically every 30 seconds.
+- **Pulsing Availability Radar Ping**:
+  - Configured high-performance `@keyframes pulse-dot` radar ping across all `.indicator-dot` elements (hero availability pill, status badges), indicating active availability for internship and part-time developer roles.
+- **Bento Section Architectural Micro-Tags & Card Elevation**:
+  - Added monospaced numbered tags (`01 // ACADEMICS & TECH STACK`, `02 // ENGINEERING METHODOLOGY`, `03 // PHILOSOPHY & MANIFESTO`).
+  - Added hover lifts (`transform: translateY(-4px)`), crimson border illumination, and deep drop shadows on bento and mockup cards.
+- **Mobile Responsive Harmonization**:
+  - Optimized layouts for screens `< 640px` and `< 480px`: vertically stacked top metadata items, fluid display font clamps, full-width mobile action buttons, and responsive footer links.
+
 ## [2.3.1] — 2026-11-13
 
 ### Fixed
