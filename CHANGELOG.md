@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.5.0] — 2026-11-13
+
+### Added & Enhanced
+- **Authentic Cyber Developer "A" Emblem & Identity System**:
+  - Processed, cropped, and integrated the futuristic silver/crimson "A" code-bracket emblem (`assets/images/logo.png`).
+  - Added the brand emblem with interactive hover scale and neon red drop-shadow glow to the persistent header navigation (`.brand-logo-img`).
+  - Integrated the glowing pulsing emblem into the full-screen branded preloader overlay (`.preloader-logo-img`).
+  - Embedded the emblem into the footer copyright line (`.footer-logo-img`).
+  - Generated and deployed high-resolution browser favicon and touch icons (`assets/images/favicon.png`).
+
 ## [2.4.1] — 2026-11-13
 
 ### Fixed
