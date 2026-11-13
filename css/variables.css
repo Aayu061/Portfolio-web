@@ -5,25 +5,29 @@
    ========================================================================== */
 
 :root {
-  /* Brand Primitives (6-Color System) */
-  --color-midnight-navy: #161e2f;
-  --color-deep-slate: #242f49;
-  --color-steel-slate: #384358;
+  /* Brand Primitives (6-Color System & Editorial Crimson Palette) */
+  --color-midnight-navy: #08090d;
+  --color-deep-slate: #12131b;
+  --color-steel-slate: #1e202d;
   --color-warm-peach: #ffa586;
-  --color-crimson-red: #b51a2b;
+  --color-crimson-red: #D31027;
+  --color-crimson-glow: rgba(211, 16, 39, 0.45);
+  --color-crimson-card: #941320;
   --color-burgundy: #541a2e;
 
   /* Extended Alpha Tints & Neutrals */
   --color-white: #ffffff;
   --color-warm-white: #fff5f0;
   --color-warm-surface: #ffe4d9;
-  --color-charcoal-muted: #6c6670;
-  --color-slate-light: #c2c6d0;
-  --color-cream-text: #f8f0ed;
+  --color-charcoal-muted: #8e95a5;
+  --color-slate-light: #d1d5db;
+  --color-cream-text: #ffffff;
 
   /* Typography Stacks */
-  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Bebas Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-heading: 'Bebas Neue', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   /* Fluid Font Scales */

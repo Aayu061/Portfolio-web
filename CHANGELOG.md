@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] — 2026-11-13
+
+### Changed & Redesigned
+- **High-Impact Luxury Editorial Poster Design (Full Visual Transformation)**:
+  - **Giant Red Backdrop Watermark:** Bold condensed `PORTFOLIO` title (`Bebas Neue`) spanning the hero width with signature crimson red glow.
+  - **Hero Subject Overlap:** High-fashion studio editorial portrait of Aayush in a dark blazer with cinematic crimson rim lighting seamlessly overlapping the background typography.
+  - **Editorial Hero Typography:** Cursive handwritten accent `Hello, I'm` (`Caveat`), giant condensed display name `AAYUSH PANCHAL`, subtitle, and 3-stat counter stack (`3+` Years Experience, `15+` Projects Completed, `100%` Commitment).
+  - **Multi-Mode Portrait Switcher:** Interactive toggle cycling between Editorial Studio Blazer Portrait, Authentic Mirror Selfie Photo, and Stylized 3D Digital Avatar.
+  - **Selected Projects Showcase:** 3 high-contrast cards with bold red indices `01`, `02`, `03` for *Place Your Service*, *Extreme Sales & Services*, and *AI Café & Nexa Bank*, wired directly to the deep-dive Case Study Drawer.
+  - **Editorial Bento Grid:**
+    - Column 1: `EDUCATION & SKILLS` with degree details and dark bordered skill pills.
+    - Column 2: `WORK PROCESS` with 5-step numbered circular timeline (`01 Discover`, `02 Ideate`, `03 Design`, `04 Develop`, `05 Deliver`).
+    - Column 3: Solid **Crimson Red Quote Card** with quotation marks, philosophical quote, script signature `Aayush`, and bottom action banner.
+  - **Let's Work Together Section:** Bold headline, direct contact list, action button, and realistic dark laptop desk mockup (`assets/images/workspace_mockup.jpg`).
+  - **Validation & Quality:** 100% clean `html-validate` with 0 errors and 0 warnings.
+
 ## [1.2.0] — 2026-11-13
 
 ### Added

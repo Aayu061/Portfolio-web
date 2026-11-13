@@ -19,6 +19,55 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 16ch;
 }
 
+/* Editorial Display & Script Typography */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.hero-intro-script {
+  font-family: var(--font-script);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  color: var(--color-crimson-red);
+  line-height: 1;
+  font-weight: 700;
+  transform: rotate(-3deg);
+  display: inline-block;
+  margin-bottom: 0.15rem;
+}
+
+.hero-display-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 8.5vw, 7.2rem);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.hero-display-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--color-crimson-red);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.quote-script-sig {
+  font-family: var(--font-script);
+  font-size: 2.6rem;
+  color: #ffffff;
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
 .section-title {
   font-size: var(--text-3xl);
   font-weight: 700;

@@ -1,43 +1,54 @@
 /**
- * Portrait Frame Interactive Module
- * Manages seamless switching between authentic studio portrait photo and
- * stylized 3D digital developer avatar, with image preloading and audio cues.
+ * Hero Portrait Frame Interactive Module
+ * Manages seamless multi-mode switching between Editorial Studio Portrait,
+ * Authentic Mirror Selfie Photo, and Stylized 3D Digital Developer Avatar.
  */
 
 import { eventBus } from '../core/event-bus.js';
 
 export function initPortrait() {
-  const img = document.getElementById('portrait-img');
-  const toggleBtn = document.getElementById('portrait-toggle-btn');
-  const tag = document.getElementById('portrait-mode-tag');
+  const img = document.getElementById('hero-portrait-img');
+  const toggleBtn = document.getElementById('hero-portrait-toggle');
 
   if (!img || !toggleBtn) return;
 
-  const assets = {
-    photo: {
-      src: 'assets/images/profile/aayush_portrait.jpg',
-      tag: 'STUDIO // PHOTO',
-      btnText: 'View 3D Avatar ✦',
-      alt: 'Aayush Panchal — Full-Stack Developer Studio Portrait'
+  const modes = [
+    {
+      id: 'hero',
+      src: 'assets/images/profile/aayush_hero.jpg',
+      btnText: 'View Selfie Photo ✦',
+      alt: 'Aayush Panchal — Editorial Tech Studio Portrait'
     },
-    avatar: {
+    {
+      id: 'photo',
+      src: 'assets/images/profile/aayush_portrait.jpg',
+      btnText: 'View 3D Avatar ✦',
+      alt: 'Aayush Panchal — Authentic Portrait Photograph'
+    },
+    {
+      id: 'avatar',
       src: 'assets/images/profile/aayush_avatar.jpg',
-      tag: 'STUDIO // AVATAR',
-      btnText: 'View Real Photo ✦',
+      btnText: 'View Editorial Studio ✦',
       alt: 'Aayush Panchal — Stylized 3D Digital Developer Avatar'
     }
-  };
+  ];
 
-  // Preload avatar asset for instantaneous switching
-  const preloadImg = new Image();
-  preloadImg.src = assets.avatar.src;
+  // Preload all assets into browser cache for zero-lag switching
+  modes.forEach((mode) => {
+    const p = new Image();
+    p.src = mode.src;
+  });
 
-  // Restore saved preference if any
-  let currentMode = localStorage.getItem('agy_portrait_mode') || 'photo';
+  let currentIndex = 0;
+  const savedId = localStorage.getItem('agy_hero_portrait_mode');
+  if (savedId) {
+    const found = modes.findIndex((m) => m.id === savedId);
+    if (found !== -1) currentIndex = found;
+  }
 
-  function applyMode(mode, animate = true) {
-    currentMode = mode;
-    const config = assets[mode];
+  function applyMode(index, animate = true) {
+    currentIndex = index;
+    const config = modes[currentIndex];
     if (!config) return;
 
     if (animate) {
@@ -47,43 +58,39 @@ export function initPortrait() {
       setTimeout(() => {
         img.src = config.src;
         img.alt = config.alt;
-        img.dataset.mode = mode;
-        if (tag) tag.textContent = config.tag;
+        img.dataset.mode = config.id;
         toggleBtn.textContent = config.btnText;
 
         img.onload = () => {
           img.style.opacity = '1';
           img.style.transform = 'scale(1)';
         };
-        // Fallback in case image is already cached
         setTimeout(() => {
           img.style.opacity = '1';
           img.style.transform = 'scale(1)';
         }, 50);
-      }, 150);
+      }, 140);
     } else {
       img.src = config.src;
       img.alt = config.alt;
-      img.dataset.mode = mode;
-      if (tag) tag.textContent = config.tag;
+      img.dataset.mode = config.id;
       toggleBtn.textContent = config.btnText;
     }
 
     try {
-      localStorage.setItem('agy_portrait_mode', mode);
+      localStorage.setItem('agy_hero_portrait_mode', config.id);
     } catch {
-      // Ignore private browsing storage errors
+      // Ignore storage restrictions in private mode
     }
   }
 
-  // Apply initially if saved mode was avatar
-  if (currentMode === 'avatar') {
-    applyMode('avatar', false);
+  if (currentIndex !== 0) {
+    applyMode(currentIndex, false);
   }
 
   toggleBtn.addEventListener('click', () => {
-    const nextMode = currentMode === 'photo' ? 'avatar' : 'photo';
-    applyMode(nextMode, true);
+    const nextIndex = (currentIndex + 1) % modes.length;
+    applyMode(nextIndex, true);
     eventBus.emit('sound:trigger', { type: 'click' });
   });
 }

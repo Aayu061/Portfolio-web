@@ -27,7 +27,7 @@ export async function initProjects() {
 
   // 2. Open Case Study Drawer Handler
   document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-action="open-case-study"]');
+    const trigger = e.target.closest('[data-action="open-case-study"], .project-card-editorial');
     if (trigger) {
       const projectId = trigger.getAttribute('data-project-id');
       const project = projectsData.find(p => p.id === projectId);

@@ -153,3 +153,66 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   Editorial Poster Layout Responsive Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-editorial-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .hero-center-portrait {
+    grid-column: 1 / -1;
+    order: -1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-portrait-frame {
+    height: clamp(380px, 50vh, 520px);
+  }
+
+  .projects-grid-editorial {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .bento-section-editorial {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .contact-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .hero-right-col {
+    padding-left: 0;
+  }
+
+  .hero-stats-stack {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .hero-stat-item {
+    flex: 1 1 120px;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding-right: var(--space-sm);
+  }
+
+  .hero-stat-item:last-child {
+    border-right: none;
+  }
+}
+
