@@ -1432,11 +1432,13 @@
   border: none;
   outline: none;
   box-shadow: none;
-  border-radius: var(--radius-md);
   -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.65));
-  pointer-events: auto;
+  pointer-events: none;
+  user-select: none;
+  transform: none !important;
+  transition: none !important;
 }
 
 .hero-right-col {
@@ -2007,7 +2009,11 @@
 }
 
 @media (pointer: fine) {
-  body, a, button, input, textarea, select {
+  *,
+  *::before,
+  *::after,
+  html,
+  body {
     cursor: none !important;
   }
 }

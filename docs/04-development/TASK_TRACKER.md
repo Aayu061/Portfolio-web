@@ -93,6 +93,7 @@
 - [x] **2026-11-13:** Fresher Semester 6 role positioning, authentic cutout borderless subject, 4 standalone projects in infinite horizontal loop marquee, deep Dark/Light mode overhaul, and zero-error linter validation.
 - [x] **2026-11-13:** Upgraded to full-screen fluid alignment (min 94vw, 1760px), resolved 'Hello, I'm' dark mode contrast with glowing electric coral accent, replaced watermark with gamer/programmer title 'DEVELOPER', and updated laptop screen to authentic VS Code dark coding IDE platform.
 - [x] **2026-11-13:** Fixed hero top meta contrast (watermark lowered to 17%, bright white left text, illuminated availability badge pill), removed unused audio synthesizer and speaker button from header navigation, and created custom hardware-accelerated developer/gamer mouse cursor with smooth lerp physics.
+- [x] **2026-11-13:** Enforced universal OS cursor suppression on desktop fine pointers and locked the authentic hero cutout photo to a completely fixed, static state without zoom or shifts.
 
 ---
 

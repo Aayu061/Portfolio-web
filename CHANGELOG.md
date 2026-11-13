@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.3.1] — 2026-11-13
+
+### Fixed
+- **Universal Cursor Suppression on Desktop**:
+  - Enforced `cursor: none !important;` globally across `*, *::before, *::after, html, body` under `@media (pointer: fine)`.
+  - Completely eliminated the default OS arrow/pointer cursor that previously leaked through when hovering over project cards, buttons, text nodes, and container elements while the custom HUD cursor is active.
+- **Fixed Hero Cutout Photo Stability**:
+  - Removed unwanted mouse hover scaling and translation from `js/modules/portrait.js`.
+  - Added `pointer-events: none; user-select: none; transform: none !important; transition: none !important;` in `css/components.css` to permanently lock the authentic photo cutout in place without unintended zoom or shift artifacts.
+
 ## [2.3.0] — 2026-11-13
 
 ### Changed & Enhanced
