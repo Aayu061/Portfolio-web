@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.6.3] — 2026-11-15
+
+### Fixed — Fixed Header Clearance & Laptop Screen Vertical Balance
+- **Eliminated Fixed Header Overlap on Top Meta Bar**:
+  - Calibrated `.hero-editorial-section` default `padding-top` to `calc(76px + 1.25rem)` (and `calc(76px + 0.85rem)` on laptop screen heights `<= 900px`), guaranteeing the 76px sticky header never covers or clips `.hero-top-meta` (`B.SC. COMPUTER SCIENCE (SEM 6)...` and `OPEN TO INTERNSHIP...` badge).
+  - Configured `justify-content: center` to evenly balance vertical whitespace above the top meta bar and below the action buttons on laptop viewports.
+  - Bumped asset cache-busting query strings across all stylesheets and scripts to `?v=2.6.3`.
+
 ## [2.6.2] — 2026-11-15
 
 ### Fixed — Laptop Screen Vertical Viewport Optimization

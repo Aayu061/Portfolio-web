@@ -104,6 +104,7 @@
 - [x] **2026-11-15:** 100% Production Milestone: Restored `#journey` development timeline with filter pills, integrated interactive contact form (`#contact`), embedded live System Architecture Node Graph canvas in Bento Grid, generated 1200x630 OpenGraph card (`og-preview.png`), deployed PWA `manifest.webmanifest`, and added global toast notification HUD.
 - [x] **2026-11-15:** Fixed hero watermark 'O' occlusion by portrait cutout (Option A): calibrated watermark to top 0.85rem with 0.07em letter-spacing, and tuned portrait dimensions to max-width clamp(330px, 23vw, 385px), ensuring 100% visibility of the word 'DEVELOPER' across all desktop, laptop, tablet, and mobile viewports with verified zero horizontal overflow.
 - [x] **2026-11-15:** Laptop screen vertical viewport optimization: implemented `@media (max-height: 900px) and (min-width: 1024px)` in `css/responsive.css`, eliminating fold overflow and preventing hero CTA buttons from bleeding into `#work` across 1366x768, 1536x864, 1280x720, and 1440x900 screens.
+- [x] **2026-11-15:** Fixed header clearance and vertical centering (v2.6.3): enforced `padding-top: calc(76px + 0.85rem)` preventing sticky header overlap on top meta bar and centered hero content inside 740px laptop viewports with `?v=2.6.3` cache-busting.
 
 ---
 
