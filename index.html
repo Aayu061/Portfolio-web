@@ -12,6 +12,7 @@
   <link rel="canonical" href="https://aayushpanchal.dev/">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
 
   <!-- Open Graph / Social Meta -->
   <meta property="og:type" content="website">
@@ -26,14 +27,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Modular CSS Hierarchy -->
-  <link rel="stylesheet" href="css/variables.css?v=2.5.2">
-  <link rel="stylesheet" href="css/reset.css?v=2.5.2">
-  <link rel="stylesheet" href="css/typography.css?v=2.5.2">
-  <link rel="stylesheet" href="css/themes.css?v=2.5.2">
-  <link rel="stylesheet" href="css/layout.css?v=2.5.2">
-  <link rel="stylesheet" href="css/components.css?v=2.5.2">
-  <link rel="stylesheet" href="css/animations.css?v=2.5.2">
-  <link rel="stylesheet" href="css/responsive.css?v=2.5.2">
+  <link rel="stylesheet" href="css/variables.css?v=2.5.3">
+  <link rel="stylesheet" href="css/reset.css?v=2.5.3">
+  <link rel="stylesheet" href="css/typography.css?v=2.5.3">
+  <link rel="stylesheet" href="css/themes.css?v=2.5.3">
+  <link rel="stylesheet" href="css/layout.css?v=2.5.3">
+  <link rel="stylesheet" href="css/components.css?v=2.5.3">
+  <link rel="stylesheet" href="css/animations.css?v=2.5.3">
+  <link rel="stylesheet" href="css/responsive.css?v=2.5.3">
 
   <!-- GSAP & ScrollTrigger via CDN with SRI -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" 
@@ -118,6 +119,7 @@
         <a href="#home" class="nav-link">Home</a>
         <a href="#work" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About &amp; Process</a>
+        <a href="#journey" class="nav-link">Journey</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
@@ -500,11 +502,52 @@
               LET'S CREATE SOMETHING GREAT TOGETHER ✦
             </div>
           </div>
+          <!-- Row 2: Full-Width Interactive Architecture System Node Engine -->
+          <div id="architecture-graph" class="bento-card-editorial bento-card-architecture">
+            <div class="architecture-card-header">
+              <div>
+                <span class="bento-micro-tag">04 // SYSTEM ARCHITECTURE &amp; INTERACTIVE NODES</span>
+                <h3 class="bento-card-title">ENGINEERING ECOSYSTEM NODE NETWORK</h3>
+              </div>
+              <div class="architecture-status-pill">
+                <span class="indicator-dot"></span>
+                <span>PHYSICS ENGINE // INTERACTIVE CANVAS</span>
+              </div>
+            </div>
+            <p class="architecture-card-desc">
+              Interactive 2D physics simulation of core engineering disciplines. Drag, hover, or click satellite nodes to inspect architecture telemetry and protocol throughput.
+            </p>
+            <div class="hero-visual-container architecture-canvas-wrap">
+              <canvas id="hero-canvas" class="hero-canvas"></canvas>
+              <div class="hero-telemetry-tooltip" role="tooltip" aria-hidden="true"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 04. Let's Work Together Contact Section -->
+    <!-- 04. Development Journey Section -->
+    <section id="journey" class="section journey-section">
+      <div class="container">
+        <div class="journey-header-editorial">
+          <span class="bento-micro-tag">04 // MILESTONES &amp; EDUCATION</span>
+          <h2 class="journey-title-editorial">DEVELOPMENT JOURNEY <span class="sparkle-red">✦</span></h2>
+          <p class="journey-sub-editorial">
+            Chronological engineering milestones: formal computer science degree at University of Mumbai, production SaaS architectures, and commercial web applications.
+          </p>
+        </div>
+
+        <div class="journey-filters" role="group" aria-label="Journey Category Filters">
+          <button type="button" class="filter-pill active" data-filter="ALL">ALL [5]</button>
+          <button type="button" class="filter-pill" data-filter="EDUCATION">EDUCATION</button>
+          <button type="button" class="filter-pill" data-filter="PROJECT">PROJECTS</button>
+        </div>
+
+        <div id="journey-timeline" class="journey-timeline"></div>
+      </div>
+    </section>
+
+    <!-- 05. Let's Work Together Contact Section -->
     <section id="contact" class="section contact-section">
       <div class="container">
         <div class="contact-editorial-grid">
@@ -518,7 +561,7 @@
             </p>
 
             <div class="contact-items-editorial">
-              <a href="mailto:aayu.panchal06@gmail.com" class="contact-item-row">
+              <a href="mailto:aayu.panchal06@gmail.com" class="contact-item-row" data-action="copy-email" title="Click to compose or copy email address">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 <span>aayu.panchal06@gmail.com</span>
               </a>
@@ -540,22 +583,58 @@
               </div>
             </div>
 
-            <div class="mt-md">
-              <a href="mailto:aayu.panchal06@gmail.com" class="btn btn-primary btn-cta">
-                HIRE AS INTERN / PART-TIME &rarr;
-              </a>
+            <div class="contact-mockup-frame mt-md">
+              <img
+                src="assets/images/workspace_mockup.jpg"
+                alt="Aayush Panchal — Full-Stack Developer Coding IDE Workspace"
+                width="640"
+                height="480"
+                loading="lazy"
+              >
             </div>
           </div>
 
-          <!-- Right Column: Sleek Laptop Workspace Mockup -->
-          <div class="contact-mockup-frame">
-            <img
-              src="assets/images/workspace_mockup.jpg"
-              alt="Aayush Panchal — Full-Stack Developer Coding IDE Workspace"
-              width="640"
-              height="480"
-              loading="lazy"
-            >
+          <!-- Right Column: Interactive Contact Transmission Form -->
+          <div class="contact-form-card">
+            <div class="form-header-badge">
+              <span class="indicator-dot"></span>
+              <span>COMMUNICATION CHANNEL // DIRECT TRANSMISSION</span>
+            </div>
+            <form id="contact-form" class="cyber-contact-form" novalidate>
+              <!-- Honeypot field for bot protection -->
+              <input type="text" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="form-group">
+                <label for="contact-name" class="form-label">FULL NAME <span class="required-star">*</span></label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">EMAIL ADDRESS <span class="required-star">*</span></label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. alex@company.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-project-type" class="form-label">INQUIRY TYPE / ROLE</label>
+                <select id="contact-project-type" name="project_type" class="form-select">
+                  <option value="Internship / Part-Time">Internship / Part-Time Role</option>
+                  <option value="Full-Stack Application">Full-Stack Application Architecture</option>
+                  <option value="Freelance / Collaboration">Contract / Freelance Engineering</option>
+                  <option value="General Inquiry">General Technical Discussion</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">MESSAGE <span class="required-star">*</span></label>
+                <textarea id="contact-message" name="message" class="form-textarea" rows="4" placeholder="Detail your project requirements, role scope, or engineering timeline..." required></textarea>
+              </div>
+
+              <div id="form-status-msg" class="form-status-msg" role="alert" aria-live="polite"></div>
+
+              <button type="submit" class="btn btn-primary btn-submit-form">
+                <span>TRANSMIT MESSAGE</span> &rarr;
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -670,7 +749,10 @@
     <button type="button" class="inspector-close" aria-label="Close Inspector HUD">&times;</button>
   </div>
 
+  <!-- Global Notification Toast HUD -->
+  <div id="toast-hud" class="toast-hud" role="status" aria-live="polite"></div>
+
   <!-- Master ES Module Bootstrap -->
-  <script type="module" src="js/main.js?v=2.5.2"></script>
+  <script type="module" src="js/main.js?v=2.5.3"></script>
 </body>
 </html>

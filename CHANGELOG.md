@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.6.0] — 2026-11-15
+
+### Added & Enhanced — 100% Production Milestone
+- **Restored `#journey` Development Timeline Section**:
+  - Re-introduced the development journey milestone timeline with category filter pills (`ALL [5]`, `EDUCATION`, `PROJECTS`), chronological milestone cards, verified degree details from Mumbai University, and live GSAP styling.
+  - Linked `#journey` to desktop navigation and active scroll spy observer.
+- **Interactive Cyber Contact Transmission Form (`#contact`)**:
+  - Built semantic `<form id="contact-form">` with name, email, role/inquiry selector, and message textarea.
+  - Wired full validation, honeypot anti-spam protection, transmitting state indicators, and graceful `mailto:` fallback.
+- **Embedded Interactive System Architecture Node Graph**:
+  - Integrated `<canvas id="hero-canvas">` inside Bento Grid Row 2 (`#architecture-graph`).
+  - Active 60fps 2D physics simulation featuring core node `AAYUSH CORE ENGINE`, satellites, spring cursor repulsion, traveling energy pulses, and interactive telemetry tooltips.
+- **OpenGraph Social Share Card & Web App Manifest**:
+  - Programmatically generated 1200x630 pixel-perfect `assets/images/og-preview.png` with cyber logo, typography, and tech stack tags.
+  - Created `manifest.webmanifest` for standalone installable PWA capabilities.
+- **Global Toast Notification HUD & Clipboard Actions**:
+  - Created reusable `showToast()` HUD utility.
+  - Added direct email, phone, and GitHub clipboard copy commands with toast alerts to the `Ctrl+K` Command Palette.
+
 ## [2.5.3] — 2026-11-15
 
 ### Fixed

@@ -5,6 +5,7 @@
 
 import { store } from '../core/store.js';
 import { eventBus } from '../core/event-bus.js';
+import { showToast } from '../core/toast.js';
 
 export function initCommandPalette() {
   const backdrop = document.getElementById('cmd-palette-backdrop');
@@ -40,17 +41,33 @@ export function initCommandPalette() {
       }
     },
     {
-      label: 'Toggle Procedural Micro-Audio',
-      category: 'System Tools',
-      action: () => {
-        store.set('audioEnabled', !store.get('audioEnabled'));
-      }
+      label: 'Inspect Architecture Node Graph',
+      category: 'Developer Tools',
+      action: () => scrollTo('#architecture-graph')
     },
     {
       label: 'Toggle Developer Inspector Mode (FPS/Grid)',
       category: 'Developer Tools',
       action: () => {
         eventBus.emit('inspector:toggle');
+      }
+    },
+    {
+      label: 'Copy Email Address (aayu.panchal06@gmail.com)',
+      category: 'Quick Actions',
+      action: () => {
+        closePalette();
+        navigator.clipboard?.writeText('aayu.panchal06@gmail.com');
+        showToast('✓ Transmitted to clipboard: aayu.panchal06@gmail.com');
+      }
+    },
+    {
+      label: 'Copy Phone Number (+91 9082787284)',
+      category: 'Quick Actions',
+      action: () => {
+        closePalette();
+        navigator.clipboard?.writeText('+919082787284');
+        showToast('✓ Transmitted to clipboard: +91 9082787284');
       }
     },
     {

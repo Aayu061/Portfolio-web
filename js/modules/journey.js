@@ -26,15 +26,15 @@ export async function initJourney() {
 
     timelineContainer.innerHTML = filtered.map(item => `
       <article class="timeline-node">
-        <div class="timeline-node__period">${item.period} • [${item.category}]</div>
+        <div class="timeline-node__period">${item.period} &bull; [${item.category}]</div>
         <h3 class="timeline-node__title">${item.title}</h3>
         <div class="timeline-node__org">${item.organization}</div>
-        <p style="font-size: var(--text-sm); margin-bottom: 0.75rem;">${item.description}</p>
-        <ul style="list-style: disc; padding-left: 1.25rem; font-size: var(--text-xs); color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.6;">
+        <p class="timeline-node__desc">${item.description}</p>
+        <ul class="timeline-node__highlights">
           ${item.highlights.map(h => `<li>${h}</li>`).join('')}
         </ul>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-          ${item.tags.map(t => `<span class="tech-badge" style="font-size: 10px;">${t}</span>`).join('')}
+        <div class="timeline-node__tags">
+          ${item.tags.map(t => `<span class="tech-badge tech-badge-sm">${t}</span>`).join('')}
         </div>
       </article>
     `).join('');
@@ -49,4 +49,3 @@ export async function initJourney() {
     });
   });
 }
-

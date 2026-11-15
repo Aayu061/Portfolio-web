@@ -2153,3 +2153,310 @@
     display: none !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   16. Journey Section Editorial Styling
+   -------------------------------------------------------------------------- */
+.journey-header-editorial {
+  margin-bottom: var(--space-xl);
+}
+
+.journey-title-editorial {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  letter-spacing: 0.03em;
+  margin: var(--space-xs) 0;
+  color: var(--text-primary);
+}
+
+.journey-sub-editorial {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.timeline-node {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.timeline-node:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-accent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-node__desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-node__highlights {
+  list-style: disc;
+  padding-left: 1.25rem;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.timeline-node__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tech-badge-sm {
+  font-size: 10px;
+  padding: 3px 8px;
+}
+
+/* --------------------------------------------------------------------------
+   17. Interactive Contact Form & Cyber Form Controls
+   -------------------------------------------------------------------------- */
+.contact-form-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-lg), 3vw, var(--space-2xl));
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.form-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: rgba(211, 16, 39, 0.1);
+  border: 1px solid rgba(211, 16, 39, 0.3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-primary);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-lg);
+}
+
+.cyber-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.required-star {
+  color: var(--accent-primary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(7, 8, 11, 0.6);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select,
+[data-theme="light"] .form-textarea {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 12px var(--highlight-glow);
+  background-color: rgba(7, 8, 11, 0.85);
+}
+
+.form-select option {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.btn-submit-form {
+  width: 100%;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hidden-field {
+  display: none !important;
+}
+
+.form-status-msg {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  border-radius: var(--radius-md);
+  padding: 0;
+  transition: all var(--transition-fast);
+}
+
+.form-status-msg.error {
+  padding: 10px 14px;
+  background-color: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+}
+
+.form-status-msg.success {
+  padding: 10px 14px;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #10b981;
+}
+
+.form-status-msg.warning {
+  padding: 10px 14px;
+  background-color: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #f59e0b;
+}
+
+/* --------------------------------------------------------------------------
+   18. Bento Grid Architecture Node Visualizer Card
+   -------------------------------------------------------------------------- */
+.bento-card-architecture {
+  grid-column: 1 / -1;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-md), 3vw, var(--space-xl));
+  position: relative;
+  overflow: hidden;
+}
+
+.architecture-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.architecture-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.architecture-card-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: 750px;
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.architecture-canvas-wrap {
+  width: 100%;
+  height: clamp(300px, 36vw, 420px);
+  position: relative;
+  background: radial-gradient(circle at center, rgba(211, 16, 39, 0.06) 0%, rgba(7, 8, 11, 0.8) 80%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.hero-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-telemetry-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background-color: rgba(7, 8, 11, 0.95);
+  border: 1px solid var(--border-accent);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+.hero-telemetry-tooltip.active {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   19. Global Toast Notification HUD
+   -------------------------------------------------------------------------- */
+.toast-hud {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: rgba(14, 15, 22, 0.95);
+  border: 1px solid var(--accent-primary);
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 8px 32px rgba(211, 16, 39, 0.35);
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-hud.show {
+  opacity: 1;
+  transform: translateY(0);
+}

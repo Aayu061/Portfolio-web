@@ -21,6 +21,7 @@ node_modules/
 .idea/
 
 # Scratch & reference inspection files
+scratch/
 aayushpanchal_dev.html
 ref_site.css
 inspect_ref.js

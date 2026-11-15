@@ -3,9 +3,20 @@
  * Handles form validation, honeypot anti-spam check, webhook dispatching, and mailto fallback.
  */
 
+import { showToast } from '../core/toast.js';
+
 export function initContact() {
   const form = document.getElementById('contact-form');
   const statusMsg = document.getElementById('form-status-msg');
+
+  // Direct clipboard action on contact item
+  document.querySelectorAll('[data-action="copy-email"]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      navigator.clipboard?.writeText('aayu.panchal06@gmail.com');
+      showToast('✓ Email copied to clipboard: aayu.panchal06@gmail.com');
+    });
+  });
+
   if (!form) return;
 
   form.addEventListener('submit', async (e) => {
