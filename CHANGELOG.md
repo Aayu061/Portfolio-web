@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.6.1] — 2026-11-15
+
+### Fixed — Hero Watermark 'O' Occlusion & Proportional Framing
+- **Eliminated Letter 'O' Portrait Occlusion**:
+  - Calibrated `.hero-watermark` position to `top: clamp(0.25rem, 0.75vw, 0.85rem)`, widened `letter-spacing` to `0.07em`, and adjusted font size clamp to `clamp(4rem, 9.2vw, 10.8rem)`.
+  - Scaled `.hero-center-cutout` to harmonious editorial proportions: `max-width: clamp(330px, 23vw, 385px)` and `height: clamp(420px, 54vh, 570px)`.
+  - The upper arch and bowl of the letter **"O"** now crown prominently above the subject's hair, ensuring all 9 letters in `DEVELOPER` are 100% visible and legible in both light and dark themes.
+- **Responsive Geometry & Zero Overflow**:
+  - Refined breakpoint scaling at `<= 1024px`, `<= 768px`, and `<= 640px` in `css/responsive.css` to maintain clear headroom and prevent clipping.
+  - Verified across 1920×1080, 1440×900, 1024×768, 768×1024, and 375×667 viewports with verified `hasHorizontalOverflow: false`.
+
 ## [2.6.0] — 2026-11-15
 
 ### Added & Enhanced — 100% Production Milestone

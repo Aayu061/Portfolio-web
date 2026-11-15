@@ -159,7 +159,8 @@
 @media (max-width: 1024px) {
   .hero-watermark {
     font-size: clamp(3.8rem, 13vw, 8.5rem);
-    top: 1rem;
+    top: 0.75rem;
+    letter-spacing: 0.06em;
   }
 
   .hero-editorial-grid {
@@ -175,8 +176,8 @@
     grid-column: 1 / -1;
     order: -1;
     margin-bottom: var(--space-lg);
-    max-width: 420px;
-    height: clamp(380px, 52vh, 540px);
+    max-width: 360px;
+    height: clamp(360px, 48vh, 480px);
     margin-inline: auto;
   }
 
@@ -198,8 +199,8 @@
   }
 
   .hero-center-cutout {
-    max-width: 320px;
-    height: clamp(320px, 46vh, 440px);
+    max-width: 300px;
+    height: clamp(300px, 42vh, 410px);
   }
 
   .hero-right-col {
@@ -236,8 +237,15 @@
   }
 
   .hero-watermark {
-    font-size: clamp(3.2rem, 13vw, 6.5rem);
-    top: 0.75rem;
+    font-size: clamp(2.8rem, 12.5vw, 5.5rem);
+    top: 0.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-center-cutout {
+    margin-top: 1.25rem;
+    max-width: 280px;
+    height: clamp(280px, 40vh, 360px);
   }
 
   .about-actions {
