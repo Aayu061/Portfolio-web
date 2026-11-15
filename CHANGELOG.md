@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.5.3] — 2026-11-15
+
+### Fixed
+- **Multi-Resolution Watermark Layout Verification & Diagnostics Cleanup**:
+  - Executed automated Chrome DevTools Protocol (CDP) multi-resolution collision tests from 1920x1080 down to 1280x800, verifying 0 collision (`collides: false`) between the centered `DEVELOPER` watermark and all surrounding elements (`hero-display-name`, `meta-avail-badge`, `hero-sparkle-box`, and `SEM 6` stat stack).
+  - Resolved all editor diagnostics: achieved 0 errors, 0 warnings in `npx html-validate` on `index.html`.
+  - Formatted `docs/01-project-planning/PROJECT_REQUIREMENTS.md` to achieve 100% compliance with `markdownlint` (MD022, MD032, MD060, MD012).
+  - Configured `.htmlvalidateignore` and cleaned JSX attribute casings on local reference export files.
+
 ## [2.5.2] — 2026-11-13
 
 ### Fixed
