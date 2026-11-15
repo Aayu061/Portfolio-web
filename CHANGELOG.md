@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.6.2] — 2026-11-15
+
+### Fixed — Laptop Screen Vertical Viewport Optimization
+- **Eliminated Hero Fold Bleed on Laptops**:
+  - Implemented `@media (max-height: 900px) and (min-width: 1024px)` vertical responsive rules in `css/responsive.css`.
+  - Compacted `.hero-editorial-section` vertical padding from `168px` (`padding-top: 96px`, `padding-bottom: 72px`) down to dynamic `padding-top: calc(var(--space-xl) + 1.25rem)` and `padding-bottom: var(--space-md)`.
+  - Scaled typography and button margins proportionally on laptop heights, ensuring the entire hero section (Identity, Bio, Watermark, Cutout, Stats, and Call-to-Action buttons) fits 100% inside a single laptop screen viewport without requiring scrolling into `#work`.
+  - Verified across 1366×768 (Standard Windows), 1536×864 (Windows 125% scale), 1280×720 (Windows 150% scale), and 1440×900 (MacBook Air) with 149px–349px positive bottom clearance.
+
 ## [2.6.1] — 2026-11-15
 
 ### Fixed — Hero Watermark 'O' Occlusion & Proportional Framing

@@ -292,3 +292,89 @@
   }
 }
 
+/* --------------------------------------------------------------------------
+   Laptop Screen Height Optimization (max-height: 900px on desktop widths)
+   Ensures the entire hero section fits on 1366x768, 1440x900, and Windows 125%/150% scaled displays
+   -------------------------------------------------------------------------- */
+@media (max-height: 900px) and (min-width: 1024px) {
+  .hero-editorial-section {
+    padding-top: calc(var(--space-xl) + 1.25rem);
+    padding-bottom: var(--space-md);
+    justify-content: flex-start;
+  }
+
+  .hero-top-meta {
+    margin-bottom: var(--space-xs);
+    padding-bottom: var(--space-2xs);
+  }
+
+  .hero-watermark {
+    top: 0.15rem;
+    font-size: clamp(3.6rem, 8.5vw, 9.2rem);
+  }
+
+  .hero-intro-script {
+    font-size: 1.25rem;
+  }
+
+  .hero-display-name {
+    font-size: clamp(2.8rem, 6.2vw, 4.8rem);
+    line-height: 0.88;
+  }
+
+  .hero-display-subtitle {
+    font-size: 0.72rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-lead {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-status-pill {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  .about-actions.mt-md {
+    margin-top: 0.75rem !important;
+  }
+
+  .about-actions .btn {
+    padding: 0.55rem 1.15rem;
+    font-size: 0.82rem;
+  }
+
+  .hero-center-cutout {
+    max-width: clamp(280px, 20vw, 340px);
+    height: clamp(340px, 46vh, 460px);
+  }
+
+  .hero-right-col {
+    gap: var(--space-md);
+    padding-top: 0.5rem;
+  }
+
+  .hero-sparkle-box {
+    font-size: 0.82rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .hero-stats-stack {
+    gap: var(--space-md);
+  }
+
+  .hero-stat-num {
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+    line-height: 0.9;
+  }
+
+  .hero-stat-desc {
+    font-size: 0.65rem;
+  }
+}
+
+
