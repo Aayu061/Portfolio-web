@@ -80,23 +80,39 @@ export function initContact() {
         throw new Error('Server response not OK');
       }
     } catch (err) {
-      // Fallback gracefully to direct mailto link
-      showStatus(`
-        Unable to transmit via webhook. 
-        <a href="mailto:aayu.panchal06@gmail.com?subject=${encodeURIComponent(projectType + ' Inquiry from ' + name)}&body=${encodeURIComponent(message)}" 
-           style="text-decoration: underline; color: var(--highlight); font-weight: 600;">
-           Click here to send directly via Email Client &rarr;
-        </a>
-      `, 'warning');
+      // Fallback gracefully to direct mailto link via safe DOM nodes
+      const mailtoUrl = `mailto:aayu.panchal06@gmail.com?subject=${encodeURIComponent(projectType + ' Inquiry from ' + name)}&body=${encodeURIComponent(message)}`;
+      showStatus('Unable to transmit via webhook.', 'warning', {
+        href: mailtoUrl,
+        text: 'Click here to send directly via Email Client →'
+      });
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = originalText;
     }
   });
 
-  function showStatus(html, type) {
+  function showStatus(messageText, type, actionLink = null) {
     if (!statusMsg) return;
-    statusMsg.innerHTML = html;
+    statusMsg.textContent = '';
+
+    const textNode = document.createTextNode(messageText);
+    statusMsg.appendChild(textNode);
+
+    if (actionLink && actionLink.href && actionLink.text) {
+      const br = document.createElement('br');
+      const a = document.createElement('a');
+      a.href = actionLink.href;
+      a.textContent = actionLink.text;
+      a.style.textDecoration = 'underline';
+      a.style.color = 'var(--highlight)';
+      a.style.fontWeight = '600';
+      a.style.display = 'inline-block';
+      a.style.marginTop = '0.35rem';
+      statusMsg.appendChild(br);
+      statusMsg.appendChild(a);
+    }
+
     statusMsg.style.display = 'block';
     statusMsg.style.padding = '0.75rem 1rem';
     statusMsg.style.borderRadius = 'var(--radius-sm)';

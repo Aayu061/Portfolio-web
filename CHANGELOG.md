@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.6.4] — 2026-11-15
+
+### Security — Content Security Policy, Zero-Secret Verification & DOM XSS Remediation
+- **Comprehensive API & Credential Leakage Audit**:
+  - Scanned 100% of codebase, JSON assets, documentation, and Git commit history (`git log -p -S`) for sensitive tokens, bearer headers, OpenAI/Gemini API keys, and Supabase service role secrets; verified **zero private secrets exist**.
+  - Documented OAuth 2.0 boundary: clarified that the static client-side portfolio operates with zero authentication servers or OAuth client secrets.
+- **Strict Client-Side Defensive Security Headers**:
+  - Implemented `<meta http-equiv="Content-Security-Policy">` restricting scripts (`'self'`, `cdnjs.cloudflare.com`), styles (`'self'`, `'unsafe-inline'`, Google Fonts), fonts (`fonts.gstatic.com`), objects (`'self'`), frames (`'self'`, `blob:`), connections (`'self'`, `api.web3forms.com`), and forms (`'self'`, `api.web3forms.com`, `mailto:`).
+  - Enforced `referrer="strict-origin-when-cross-origin"` and `X-Content-Type-Options: nosniff`.
+  - Enforced `Permissions-Policy` disabling hardware sensors (`camera=()`, `microphone=()`, `geolocation=()`, `interest-cohort=()`).
+- **DOM XSS Elimination**:
+  - Refactored `js/modules/contact.js` `showStatus()` to safely construct text nodes (`document.createTextNode()`) and action elements (`document.createElement('a')`), eliminating raw HTML injection sinks.
+- **Cryptographic SRI Validation & Link Security**:
+  - Verified Subresource Integrity (SRI) SHA-512 hashes for GSAP 3.12.5 and ScrollTrigger scripts.
+  - Verified 100% of outbound hyperlinks enforce `rel="noopener noreferrer"`.
+- **Security Audit Documentation**:
+  - Authored comprehensive [docs/05-quality/SECURITY_AUDIT.md](file:///c:/Users/aayup/Desktop/Portfolio%20website/docs/05-quality/SECURITY_AUDIT.md).
+  - Bumped asset cache-busting query strings to `?v=2.6.4`.
+
 ## [2.6.3] — 2026-11-15
 
 ### Fixed — Fixed Header Clearance & Laptop Screen Vertical Balance
