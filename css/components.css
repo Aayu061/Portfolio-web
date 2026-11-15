@@ -1384,8 +1384,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: calc(var(--space-3xl) + 1.5rem);
-  padding-bottom: var(--space-3xl);
+  padding-top: calc(var(--space-xl) + 1.5rem);
+  padding-bottom: var(--space-xl);
   overflow: hidden;
 }
 
