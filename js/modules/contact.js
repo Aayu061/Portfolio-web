@@ -52,9 +52,12 @@ export function initContact() {
     }
 
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
+    const originalContent = [...submitBtn.childNodes].map((node) => node.cloneNode(true));
     submitBtn.disabled = true;
+    submitBtn.classList.remove('is-sent');
+    submitBtn.classList.add('is-sending');
     submitBtn.textContent = 'Transmitting Message...';
+    let sent = false;
 
     try {
       const endpoint = form.getAttribute('action') || 'https://api.web3forms.com/submit';
@@ -76,6 +79,7 @@ export function initContact() {
       if (res.ok) {
         showStatus('Thank you! Your message has been sent. Aayush will reply within 24 hours.', 'success');
         form.reset();
+        sent = true;
       } else {
         throw new Error('Server response not OK');
       }
@@ -88,11 +92,32 @@ export function initContact() {
       });
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
+      submitBtn.classList.remove('is-sending');
+      if (sent) {
+        // Brief ✓ confirmation, then back to the normal label
+        submitBtn.classList.add('is-sent');
+        submitBtn.textContent = 'Message Sent ✓';
+        setTimeout(() => {
+          submitBtn.classList.remove('is-sent');
+          submitBtn.replaceChildren(...originalContent);
+        }, 2600);
+      } else {
+        submitBtn.replaceChildren(...originalContent);
+      }
     }
   });
 
+  // Short horizontal shake on validation errors (transform-only keyframes)
+  function shakeForm() {
+    const card = form.closest('.contact-form-card') || form;
+    card.classList.remove('is-shaking');
+    void card.offsetWidth; // restart the animation if it is already applied
+    card.classList.add('is-shaking');
+    card.addEventListener('animationend', () => card.classList.remove('is-shaking'), { once: true });
+  }
+
   function showStatus(messageText, type, actionLink = null) {
+    if (type === 'error') shakeForm();
     if (!statusMsg) return;
     statusMsg.textContent = '';
 

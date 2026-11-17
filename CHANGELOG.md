@@ -7,6 +7,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.8.0] — 2026-11-17
+
+### Added — Transitions & Motion Graphics
+- **Card → case-study morph**: opening a project flies its screenshot from the card into a new full-width screenshot header in the drawer; closing flies it back (FLIP with a temporary clone, transform-only).
+- **Context cursor**: the cursor ring becomes a labelled pill — `VIEW CASE` over project cards, `OPEN ↗` over external links, `RESUME` over resume buttons.
+- **Gliding nav indicator**: one accent bar slides between nav links as sections change and follows hover (desktop).
+- **Heading rules**: accent rules draw left→right with the Selected Projects, Development Journey and Let's Work Together headings.
+- **Hero exit**: hero text columns drift up and dim as the hero scrolls out (portrait untouched).
+- **Journey**: cards slide in from the timeline rail; only the most recently reached milestone gets the accent glow.
+- **Contact form states**: accent sweep under the focused field, progress bar while sending, success pulse, shake on validation errors.
+
+### Changed
+- **Project cards align row-by-row** using CSS subgrid (screenshot / title / summary / tags / buttons line up across all four cards); removed the redundant `→`, tightened padding — card height 615px → 569px at 1440×900.
+- **Journey cards**: readable display-font titles and a two-column card interior from 900px up; section height 2,273px → 1,891px.
+- Module imports in `js/main.js` are now versioned (`?v=2.8.0`) so returning visitors never mix new HTML with cached JS.
+
+### Fixed
+- Deep links such as `/#contact` re-align after late-loading content shifts the page (unless the visitor has already scrolled).
+- Reveal safety net: content already on screen after a fast jump or back/forward restore is shown immediately instead of waiting for its animation.
+
+## [2.7.1] — 2026-11-17
+
+### Added — Live Project Screenshots
+- Project cards now show real 1280×800 screenshots of each deployed app inside the browser-chrome mockup (`assets/images/projects/*.webp`, 960px lossy WebP, ~160 KB total), lazy-loaded, with parallax depth on hover.
+- AI Café (`ai-cafe-zeta.vercel.app`) and Nexa Bank (`nexabank06.github.io/Bank-loan`) are now linked as live sites: `LIVE` badge, `Live` card action, and the case-study drawer's "Live Production App" button.
+
+### Changed
+- `projects.json` live links and thumbnail paths updated to the real deployments and screenshot files.
+- Screenshot frames use a taller 16:11 ratio; the category badge overlay is hidden on screenshot cards (the category already appears under the title).
+- Asset cache-busting strings bumped to `?v=2.7.1`.
+
 ## [2.7.0] — 2026-11-17
 
 ### Added — Motion System & Recruiter Interaction Layer

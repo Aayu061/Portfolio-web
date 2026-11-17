@@ -1735,7 +1735,7 @@ html:not(.has-tilt) .project-card-editorial:hover {
 .project-meta-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: var(--space-md) var(--space-lg);
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
@@ -1761,22 +1761,14 @@ html:not(.has-tilt) .project-card-editorial:hover {
 }
 
 .project-info-editorial small {
+  display: block;
+  margin-top: 2px;
   font-family: var(--font-mono);
   font-size: var(--text-2xs);
+  line-height: 1.5;
   color: var(--text-muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-}
-
-.project-arrow-red {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  transition: transform var(--transition-fast), color var(--transition-fast);
-}
-
-.project-card-editorial:hover .project-arrow-red {
-  transform: translateX(4px);
-  color: var(--color-crimson-red);
 }
 
 /* Bento Section */
@@ -2507,10 +2499,12 @@ html:not(.has-tilt) .project-card-editorial:hover {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2;
+  height: var(--mockup-chrome-height);
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 7px 10px;
+  padding: 0 10px;
   background-color: var(--mockup-chrome-bg);
   border-bottom: 1px solid var(--mockup-chrome-border);
 }
@@ -2560,12 +2554,90 @@ html:not(.has-tilt) .project-card-editorial:hover {
   color: var(--color-white);
 }
 
+/* Live screenshot inside the browser frame */
+.project-mockup-frame.has-shot {
+  padding: 0;
+}
+
+.mockup-shot {
+  position: absolute;
+  top: var(--mockup-chrome-height);
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--mockup-chrome-height));
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.06);
+  transition: transform var(--transition-slow);
+}
+
+html:not(.has-tilt) .project-card-editorial:hover .mockup-shot {
+  transform: scale(1.1);
+}
+
+.has-tilt .mockup-shot {
+  transition: none; /* GSAP drives the parallax depth */
+}
+
+/* Taller frame so the screenshot reads at card size (16:10 shot + chrome bar) */
+.projects-grid .project-mockup-frame.has-shot {
+  aspect-ratio: 16 / 11;
+}
+
+/* The category already sits under the card title; keep the screenshot unobstructed */
+.has-shot .mockup-badge {
+  display: none;
+}
+
 .project-card-body {
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: var(--space-sm);
   padding: var(--space-md) var(--space-lg) var(--space-lg);
+}
+
+/* Tighter card chrome in the grid (more width for text, fewer wrapped tag rows) */
+.projects-grid .project-meta-row {
+  padding: var(--space-sm) var(--space-md);
+}
+
+.projects-grid .project-num-red {
+  font-size: 2rem;
+}
+
+.projects-grid .project-card-body {
+  padding: var(--space-md);
+}
+
+/* Row-by-row alignment across all cards: each card shares 5 grid rows
+   (screenshot / title / summary / tags / buttons) with its neighbours. */
+@supports (grid-template-rows: subgrid) {
+  .project-grid-item {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+
+  .project-card-editorial {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+
+  .project-card-body {
+    display: grid;
+    grid-row: span 3;
+    grid-template-rows: subgrid;
+    row-gap: var(--space-sm);
+  }
+
+  .project-card-actions {
+    margin-top: 0;
+    align-self: end;
+  }
 }
 
 .project-card-summary {
@@ -2903,4 +2975,172 @@ html:not(.has-tilt) .project-card-editorial:hover {
 .drawer-links .btn {
   font-size: var(--text-base);
   letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   19. Journey Card Layout (v2.8.0)
+   Readable display titles and a two-column card interior on wider screens.
+   -------------------------------------------------------------------------- */
+.journey-timeline .timeline-node__title {
+  margin: 4px 0 6px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 1.9vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.03em;
+}
+
+.journey-timeline .timeline-node__org {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (min-width: 900px) {
+  .journey-timeline .timeline-node {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) 2fr;
+    column-gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .journey-timeline .timeline-node__desc {
+    margin-top: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   20. Case-Study Drawer Screenshot Header (v2.8.0)
+   -------------------------------------------------------------------------- */
+.drawer-shot-wrap {
+  margin: var(--space-xl) 0 var(--space-lg);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-tertiary);
+  box-shadow: var(--shadow-md);
+}
+
+.drawer-shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Clone that flies between a card and the drawer during the morph */
+.shot-morph-clone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: calc(var(--z-drawer) + 5);
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  transform-origin: top left;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   21. Context Cursor Labels & Gliding Nav Indicator (v2.8.0)
+   -------------------------------------------------------------------------- */
+.cursor-follower {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--color-white);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity var(--transition-fast), transform var(--transition-normal);
+}
+
+.cursor-follower.has-label {
+  width: 92px;
+  height: 30px;
+  border-radius: var(--radius-pill);
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.cursor-follower.has-label .cursor-label {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* One shared bar glides between nav links (replaces per-link underlines) */
+.nav-links {
+  position: relative;
+}
+
+.nav-glider {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 1px;
+  height: 2px;
+  background-color: var(--accent-primary);
+  box-shadow: 0 0 8px var(--highlight-glow);
+  transform-origin: left center;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 450ms var(--ease-out-expo), opacity var(--transition-fast);
+}
+
+.has-nav-glider .nav-link::after {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .nav-glider {
+    display: none;
+  }
+
+  .has-nav-glider .nav-link::after {
+    display: block;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   22. Heading Rules & Journey Focus (v2.8.0)
+   -------------------------------------------------------------------------- */
+.heading-rule {
+  display: block;
+  width: 72px;
+  height: 2px;
+  margin-top: var(--space-sm);
+  background: linear-gradient(to right, var(--accent-primary), var(--color-warm-peach));
+  transform-origin: left center;
+}
+
+.projects-header-editorial {
+  position: relative;
+}
+
+.heading-rule--divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: auto;
+  height: 1px;
+  margin: 0;
+}
+
+.motion-on .journey-timeline .timeline-node.is-current {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 0 1px var(--border-accent), 0 12px 32px var(--highlight-glow);
 }

@@ -34,6 +34,9 @@ export function initMotion() {
   initTicker();
   initJourneyProgress();
   initDrawerStagger();
+  initCaseStudyMorph();
+  initHeroExit();
+  initRevealSafetyNet();
 
   if (hasFinePointer) {
     document.documentElement.classList.add('has-tilt');
@@ -233,18 +236,49 @@ function initHeadingReveals() {
     const lines = splitLines(heading);
     if (!lines.length) return;
     gsap.set(lines, { yPercent: 105 });
+
+    // Accent rule that draws left→right with the heading: full-width over the
+    // projects header divider, a short bar under the other headings.
+    const rule = document.createElement('span');
+    rule.className = 'heading-rule';
+    rule.setAttribute('aria-hidden', 'true');
+    const projectsHeader = heading.closest('.projects-header-editorial');
+    if (projectsHeader) {
+      rule.classList.add('heading-rule--divider');
+      projectsHeader.appendChild(rule);
+    } else {
+      heading.insertAdjacentElement('afterend', rule);
+    }
+    gsap.set(rule, { scaleX: 0 });
+
     ScrollTrigger.create({
       trigger: heading,
       start: 'top 88%',
       once: true,
-      onEnter: () => gsap.to(lines, {
-        yPercent: 0,
-        duration: 1,
-        stagger: 0.12,
-        ease: 'power4.out',
-        onComplete: () => unmask(lines)
-      })
+      onEnter: () => {
+        gsap.to(lines, {
+          yPercent: 0,
+          duration: 1,
+          stagger: 0.12,
+          ease: 'power4.out',
+          onComplete: () => unmask(lines)
+        });
+        gsap.to(rule, { scaleX: 1, duration: 1.1, delay: 0.25, ease: 'power3.inOut' });
+      }
     });
+  });
+}
+
+/* Hero copy drifts up and dims as the hero scrolls out (portrait stays static) */
+function initHeroExit() {
+  const cols = gsap.utils.toArray('.hero-left-col, .hero-right-col');
+  if (!cols.length) return;
+  gsap.to(cols, {
+    y: -70,
+    opacity: 0.15,
+    ease: 'none',
+    immediateRender: false,
+    scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: 0.4 }
   });
 }
 
@@ -284,25 +318,57 @@ function scramble(el, duration = 0.9) {
   requestAnimationFrame(frame);
 }
 
-function revealBatch(selector, { y = 40, stagger = 0.08, start = 'top 88%', duration = 0.8 } = {}) {
+// Elements still waiting for their reveal; the safety net below shows any that a
+// fast jump (nav click, deep link, back/forward restore) left hidden on screen.
+const pendingReveals = new Set();
+const REVEAL_CLEAR = 'transform,opacity,visibility,transition';
+
+function showNow(elements) {
+  elements.forEach((el) => pendingReveals.delete(el));
+  gsap.set(elements, { clearProps: REVEAL_CLEAR });
+}
+
+function revealBatch(selector, { y = 40, x = 0, stagger = 0.08, start = 'top 88%', duration = 0.8 } = {}) {
   const elements = gsap.utils.toArray(selector);
   if (!elements.length) return;
 
   // Inline transition:none stops CSS hover transitions from fighting the tween.
-  gsap.set(elements, { autoAlpha: 0, y, transition: 'none' });
+  gsap.set(elements, { autoAlpha: 0, x, y, transition: 'none' });
+  elements.forEach((el) => pendingReveals.add(el));
+
   ScrollTrigger.batch(elements, {
     start,
     once: true,
-    onEnter: (batch) => gsap.to(batch, {
-      autoAlpha: 1,
-      y: 0,
-      duration,
-      stagger,
-      ease: 'power3.out',
-      overwrite: true,
-      onComplete: () => gsap.set(batch, { clearProps: 'transform,opacity,visibility,transition' })
-    })
+    onEnter: (batch) => {
+      // Already scrolled past (above the screen): no point animating out of view.
+      const above = batch.filter((el) => el.getBoundingClientRect().bottom < 0);
+      const visible = batch.filter((el) => !above.includes(el));
+      if (above.length) showNow(above);
+      if (!visible.length) return;
+
+      visible.forEach((el) => pendingReveals.delete(el));
+      gsap.to(visible, {
+        autoAlpha: 1,
+        x: 0,
+        y: 0,
+        duration,
+        stagger,
+        ease: 'power3.out',
+        overwrite: true,
+        onComplete: () => gsap.set(visible, { clearProps: REVEAL_CLEAR })
+      });
+    }
   });
+}
+
+function initRevealSafetyNet() {
+  const sweep = () => {
+    const stuck = [...pendingReveals].filter((el) => el.isConnected && el.getBoundingClientRect().top < window.innerHeight);
+    if (stuck.length) showNow(stuck);
+  };
+  ScrollTrigger.addEventListener('scrollEnd', sweep);
+  window.addEventListener('load', () => setTimeout(sweep, 1200));
+  window.addEventListener('pageshow', (e) => { if (e.persisted) sweep(); });
 }
 
 function initScrollReveals() {
@@ -353,7 +419,8 @@ function initCardTilt() {
   window.addEventListener('resize', () => rects.clear(), { passive: true });
 
   cards.forEach((card) => {
-    const title = card.querySelector('.mockup-screen-title');
+    // Depth layer: the live screenshot (or the text title on cards without one)
+    const title = card.querySelector('.mockup-shot, .mockup-screen-title');
     const tween = { duration: 0.6, ease: 'power3.out' };
     const rotateX = gsap.quickTo(card, 'rotationX', tween);
     const rotateY = gsap.quickTo(card, 'rotationY', tween);
@@ -377,8 +444,8 @@ function initCardTilt() {
       const py = (e.clientY - rect.top) / rect.height;
       rotateY((px - 0.5) * 9);
       rotateX((0.5 - py) * 7);
-      titleX?.((px - 0.5) * 16);
-      titleY?.((py - 0.5) * 10);
+      titleX?.((px - 0.5) * 12);
+      titleY?.((py - 0.5) * 8);
       card.style.setProperty('--spot-x', `${(px * 100).toFixed(1)}%`);
       card.style.setProperty('--spot-y', `${(py * 100).toFixed(1)}%`);
     }, { passive: true });
@@ -435,20 +502,29 @@ function initJourneyProgress() {
     nodeTriggers = [];
 
     const nodes = gsap.utils.toArray('#journey-timeline .timeline-node');
+
+    // Only the most recent lit milestone gets the accent glow
+    const markCurrent = () => {
+      const lit = nodes.filter((n) => n.classList.contains('is-active'));
+      nodes.forEach((n) => n.classList.toggle('is-current', n === lit[lit.length - 1]));
+    };
+
     nodes.forEach((node) => {
       nodeTriggers.push(ScrollTrigger.create({
         trigger: node,
         start: 'top 60%',
-        onEnter: () => node.classList.add('is-active'),
-        onLeaveBack: () => node.classList.remove('is-active')
+        onEnter: () => { node.classList.add('is-active'); markCurrent(); },
+        onLeaveBack: () => { node.classList.remove('is-active'); markCurrent(); }
       }));
     });
 
+    // Cards slide off the rail (from the left) rather than rising
     if (initial) {
-      revealBatch(nodes, { y: 36, stagger: 0.1 });
+      revealBatch(nodes, { x: -32, y: 0, stagger: 0.1 });
     } else {
-      gsap.fromTo(nodes, { autoAlpha: 0, y: 24, transition: 'none' }, {
+      gsap.fromTo(nodes, { autoAlpha: 0, x: -24, y: 0, transition: 'none' }, {
         autoAlpha: 1,
+        x: 0,
         y: 0,
         duration: 0.55,
         stagger: 0.07,
@@ -458,6 +534,96 @@ function initJourneyProgress() {
     }
 
     ScrollTrigger.refresh();
+  });
+}
+
+/* --------------------------------------------------------------------------
+   Card ⇄ case-study morph — the card screenshot flies into the drawer header
+   on open and back into the card on close (FLIP with a temporary clone).
+   -------------------------------------------------------------------------- */
+function initCaseStudyMorph() {
+  const drawer = document.getElementById('case-study-drawer');
+  const shot = document.getElementById('drawer-shot');
+  if (!drawer || !shot) return;
+
+  let flight = null;
+
+  const isOnScreen = (r) => r.width > 0 && r.height > 0
+    && r.top + r.height > 0 && r.left + r.width > 0
+    && r.top < window.innerHeight && r.left < window.innerWidth;
+
+  const cardShot = (id) => document.querySelector(`.project-card-editorial[data-project-id="${id}"] .mockup-shot`);
+
+  // Visible screenshot area of a card: the frame minus its browser-chrome bar
+  // (the <img> itself is slightly scaled up inside an overflow-hidden frame).
+  const cardShotRect = (img) => {
+    const frame = img.parentElement.getBoundingClientRect();
+    const chrome = img.parentElement.querySelector('.mockup-chrome')?.offsetHeight || 0;
+    return { left: frame.left, top: frame.top + chrome, width: frame.width, height: frame.height - chrome };
+  };
+
+  // Where the drawer screenshot rests once the drawer has fully slid in
+  const restingDrawerShotRect = () => {
+    const wrap = shot.parentElement;
+    const drawerLeft = document.documentElement.clientWidth - drawer.offsetWidth + drawer.clientLeft;
+    return {
+      left: drawerLeft + wrap.offsetLeft,
+      top: wrap.offsetTop - drawer.scrollTop,
+      width: wrap.offsetWidth,
+      height: wrap.offsetHeight
+    };
+  };
+
+  // The clone is laid out at the large rect; scaling shrinks it onto the small one.
+  const fly = (src, large, small, direction, done) => {
+    flight?.progress(1);
+    const clone = document.createElement('img');
+    clone.src = src;
+    clone.alt = '';
+    clone.className = 'shot-morph-clone';
+    clone.style.width = `${large.width}px`;
+    clone.style.height = `${large.height}px`;
+    document.body.appendChild(clone);
+
+    const smallState = { x: small.left, y: small.top, scaleX: small.width / large.width, scaleY: small.height / large.height };
+    const largeState = { x: large.left, y: large.top, scaleX: 1, scaleY: 1 };
+    const [from, to] = direction === 'open' ? [smallState, largeState] : [largeState, smallState];
+
+    flight = gsap.fromTo(clone, from, {
+      ...to,
+      duration: direction === 'open' ? 0.75 : 0.55,
+      ease: 'power3.inOut',
+      onComplete: () => {
+        clone.remove();
+        flight = null;
+        done();
+      }
+    });
+  };
+
+  eventBus.on('case-study:opened', ({ id }) => {
+    const source = cardShot(id);
+    if (!source) return;
+    const from = cardShotRect(source);
+    if (!isOnScreen(from)) return;
+
+    gsap.set([shot, source], { autoAlpha: 0 });
+    fly(source.currentSrc || source.src, restingDrawerShotRect(), from, 'open', () => {
+      gsap.set([shot, source], { clearProps: 'opacity,visibility' });
+    });
+  });
+
+  eventBus.on('case-study:closing', ({ id }) => {
+    const target = cardShot(id);
+    if (!target) return;
+    const to = cardShotRect(target);
+    const from = shot.parentElement.getBoundingClientRect();
+    if (!isOnScreen(to) || !isOnScreen(from)) return;
+
+    gsap.set([shot, target], { autoAlpha: 0 });
+    fly(shot.currentSrc || shot.src, from, to, 'close', () => {
+      gsap.set([shot, target], { clearProps: 'opacity,visibility' });
+    });
   });
 }
 

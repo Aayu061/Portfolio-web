@@ -89,7 +89,29 @@ export function initCursor() {
   // Interactive hover expansion for clickable elements
   const hoverSelector = 'a, button, [role="button"], .project-card-editorial, input, textarea, select, [tabindex="0"]';
 
+  // Context label shown inside the ring (e.g. "VIEW CASE" over a project card)
+  const label = document.createElement('span');
+  label.className = 'cursor-label';
+  follower.appendChild(label);
+
+  const labelFor = (el) => {
+    const explicit = el.closest('[data-cursor]');
+    if (explicit) return explicit.getAttribute('data-cursor');
+    if (el.closest('[data-action="open-resume-preview"]')) return 'RESUME';
+    if (el.closest('a[target="_blank"]')) return 'OPEN ↗';
+    if (el.closest('[data-action="open-case-study"], .project-card-editorial')) return 'VIEW CASE';
+    return '';
+  };
+
   document.addEventListener('mouseover', (e) => {
+    const text = labelFor(e.target);
+    if (text) {
+      label.textContent = text;
+      follower.classList.add('has-label');
+    } else {
+      follower.classList.remove('has-label');
+    }
+
     const target = e.target.closest(hoverSelector);
     if (target && !isHovered) {
       isHovered = true;
@@ -105,6 +127,9 @@ export function initCursor() {
         isHovered = false;
         follower.classList.remove('cursor-hover');
       }
+    }
+    if (!e.relatedTarget || !labelFor(e.relatedTarget)) {
+      follower.classList.remove('has-label');
     }
   });
 }

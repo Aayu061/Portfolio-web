@@ -5,7 +5,7 @@
     "category": "Full-Stack Enterprise / SaaS",
     "status": "COMPLETED",
     "summary": "Production AC service management web platform engineering end-to-end service, asset, AMC, technician, inventory, and payment operations with audit logs.",
-    "thumbnail": "assets/images/projects/place-your-service/preview.webp",
+    "thumbnail": "assets/images/projects/place-your-service.webp",
     "technologies": [
       "TypeScript",
       "Node.js",
@@ -75,7 +75,7 @@
     "category": "Enterprise HVAC & Dispatch System",
     "status": "COMPLETED",
     "summary": "Full-stack enterprise HVAC sales, servicing, recurring AMC lifecycle, and real-time dispatch web platform live in production on Vercel and Render.",
-    "thumbnail": "assets/images/projects/extreme-sales/preview.webp",
+    "thumbnail": "assets/images/projects/extreme-sales-services.webp",
     "technologies": [
       "JavaScript",
       "HTML5",
@@ -134,7 +134,7 @@
     "category": "AI-Powered Commerce Platform",
     "status": "COMPLETED",
     "summary": "Cinematic AI-driven commerce platform integrating a 192-frame canvas experience, Gemini-powered intent-aware AI Barista V2, and Drink Studio.",
-    "thumbnail": "assets/images/projects/ai-cafe/preview.webp",
+    "thumbnail": "assets/images/projects/ai-cafe.webp",
     "technologies": [
       "TypeScript",
       "Gemini API",
@@ -146,7 +146,7 @@
     ],
     "links": {
       "github": "https://github.com/Aayu061/Ai-cafe",
-      "live": "https://github.com/Aayu061/Ai-cafe"
+      "live": "https://ai-cafe-zeta.vercel.app/"
     },
     "caseStudy": {
       "overview": "AI Café is a next-generation interactive e-commerce platform that reimagines beverage discovery. Instead of standard product grids, customers converse with an intent-aware AI Barista powered by Gemini and customize drinks in a dynamic visual studio.",
@@ -198,7 +198,7 @@
     "category": "Full-Stack Banking / Financial SaaS",
     "status": "COMPLETED",
     "summary": "Full-stack loan management platform built with Express and PostgreSQL, featuring relational SQL migrations, JWT security, loan calculator, and admin portal.",
-    "thumbnail": "assets/images/projects/bank-loan/preview.webp",
+    "thumbnail": "assets/images/projects/nexa-bank.webp",
     "technologies": [
       "JavaScript",
       "Node.js",
@@ -211,7 +211,7 @@
     ],
     "links": {
       "github": "https://github.com/Aayu061/Bank-loan",
-      "live": "https://github.com/Aayu061/Bank-loan"
+      "live": "https://nexabank06.github.io/Bank-loan/index.html"
     },
     "caseStudy": {
       "overview": "Nexa Bank is a comprehensive loan management web platform engineered to streamline consumer loan applications, credit risk calculations, and administrative approval workflows.",

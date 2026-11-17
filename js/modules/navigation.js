@@ -32,7 +32,32 @@ export function initNavigation() {
   window.addEventListener('scroll', updateScroll, { passive: true });
   updateScroll();
 
-  // 2. Active Scroll Spy (IntersectionObserver)
+  // 2a. Gliding indicator: one bar slides between links (transform-only)
+  let activeLink = null;
+  let moveGlider = () => {};
+  if (navContainer) {
+    const glider = document.createElement('span');
+    glider.className = 'nav-glider';
+    glider.setAttribute('aria-hidden', 'true');
+    navContainer.appendChild(glider);
+    document.documentElement.classList.add('has-nav-glider');
+
+    moveGlider = (link) => {
+      if (!link) {
+        glider.style.opacity = '0';
+        return;
+      }
+      glider.style.transform = `translateX(${link.offsetLeft}px) scaleX(${link.offsetWidth})`;
+      glider.style.opacity = '1';
+    };
+
+    navLinks.forEach((link) => link.addEventListener('mouseenter', () => moveGlider(link)));
+    navContainer.addEventListener('mouseleave', () => moveGlider(activeLink));
+    window.addEventListener('resize', () => moveGlider(activeLink), { passive: true });
+    document.fonts?.ready.then(() => moveGlider(activeLink));
+  }
+
+  // 2b. Active Scroll Spy (IntersectionObserver)
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -43,10 +68,12 @@ export function initNavigation() {
           navLinks.forEach(link => {
             if (link.getAttribute('href') === `#${id}`) {
               link.classList.add('active');
+              activeLink = link;
             } else {
               link.classList.remove('active');
             }
           });
+          moveGlider(activeLink);
         }
       });
     }, {
@@ -54,6 +81,32 @@ export function initNavigation() {
     });
 
     sections.forEach(sec => observer.observe(sec));
+  }
+
+  // 2c. Deep links (e.g. /#contact): sections above the target (JSON-rendered
+  // journey, web fonts) change height after the browser's first jump, so
+  // re-align once the page settles — unless the visitor has started scrolling.
+  if (location.hash.length > 1) {
+    let userMoved = false;
+    const markMoved = () => { userMoved = true; };
+    ['wheel', 'touchstart', 'keydown'].forEach((evt) => window.addEventListener(evt, markMoved, { once: true, passive: true }));
+
+    const realign = () => {
+      if (userMoved) return;
+      let target = null;
+      try {
+        target = document.querySelector(location.hash);
+      } catch (err) {
+        return;
+      }
+      if (target && Math.abs(target.getBoundingClientRect().top) > 4) {
+        target.scrollIntoView({ behavior: 'instant', block: 'start' });
+      }
+    };
+    window.addEventListener('load', () => {
+      realign();
+      setTimeout(realign, 600);
+    }, { once: true });
   }
 
   // 3. Smooth Anchor Scrolling & Mobile Menu Close

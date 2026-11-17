@@ -84,6 +84,7 @@
   --mockup-chrome-border: rgba(255, 255, 255, 0.08);
   --mockup-chrome-text: rgba(255, 255, 255, 0.55);
   --mockup-live-bg: rgba(7, 8, 11, 0.6);
+  --mockup-chrome-height: 30px;
 
   /* Recruiter Quick-Links Dock */
   --z-dock: 90;

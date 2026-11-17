@@ -8,6 +8,7 @@ import { eventBus } from '../core/event-bus.js';
 
 let projectsData = [];
 let lastFocusedElement = null;
+let currentProjectId = null;
 
 export async function initProjects() {
   const track = document.getElementById('projects-track');
@@ -151,6 +152,14 @@ function openDrawer(project, drawer, backdrop) {
   const codeTabsEl = document.getElementById('drawer-code-tabs');
   const outcomesEl = document.getElementById('drawer-outcomes');
 
+  const shotEl = document.getElementById('drawer-shot');
+  if (shotEl && project.thumbnail) {
+    shotEl.src = project.thumbnail;
+    shotEl.alt = `Screenshot of ${project.title}`;
+  }
+  drawer.scrollTop = 0;
+  currentProjectId = project.id;
+
   if (titleEl) titleEl.textContent = project.title;
   if (catEl) catEl.textContent = `${project.category} • ${project.status}`;
 
@@ -259,6 +268,8 @@ function openDrawer(project, drawer, backdrop) {
 
 function closeDrawer(drawer, backdrop) {
   if (!drawer || !backdrop) return;
+  // Let the motion layer measure the drawer screenshot before it slides away
+  eventBus.emit('case-study:closing', { id: currentProjectId });
   drawer.classList.remove('active');
   backdrop.classList.remove('active');
   document.body.style.overflow = '';
