@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.7.0] — 2026-11-17
+
+### Added — Motion System & Recruiter Interaction Layer
+- **GSAP Motion Module** (`js/modules/motion.js`):
+  - Hero entrance that starts as the preloader curtains split: `DEVELOPER` watermark letters rise in sequence, the name reveals line-by-line from behind a mask, copy and CTAs stagger up, and the `4` / `100%` stats count up from zero. The portrait only fades (it stays transform-free as before). The letter split checks its own width and falls back to a plain fade if kerning would shift the calibrated layout.
+  - Watermark letters drift apart with a subtle scroll parallax as the hero leaves the viewport.
+  - Scroll-triggered staggered reveals for project cards, bento cards, process steps, skill pills, contact rows, and footer; line-mask reveals for the `SELECTED PROJECTS`, `DEVELOPMENT JOURNEY`, and `LET'S WORK TOGETHER` headings; mono micro-labels "decode" into place.
+  - Project cards: 3D tilt, cursor-tracking spotlight, and parallax depth on the mockup title (fine pointers only).
+  - Magnetic hero CTAs and contact submit button.
+  - Journey timeline: scroll-linked progress rail and milestone dots that light up as the rail reaches them; filter changes re-stagger the cards.
+  - Case-study drawer sections stagger in after the drawer slides open.
+  - Skipped entirely under `prefers-reduced-motion` or if GSAP fails to load, leaving all content visible.
+- **Tech Stack Ticker**: decorative skills band between the hero and projects that loops continuously and surges with scroll velocity; pauses off-screen.
+- **Skill Evidence** (`js/modules/skills.js`): Core Competencies pills are now toggle buttons; selecting one lists the projects from `projects.json` that use it, each opening its case study.
+- **Recruiter Quick-Links Dock** (`js/modules/quick-dock.js`): Resume / Email / LinkedIn / GitHub pill that appears after the hero and hides at the contact section; icon-only on phones.
+
+### Changed
+- **Projects section**: replaced the auto-scrolling marquee (and its duplicate card set) with a responsive grid (4 → 2 → 1 columns) so every project is visible at once. Cards gained a browser-chrome mockup bar with the real URL, a `LIVE` badge for deployed apps, the project summary, tech chips, and explicit `Case study` / `Live` / `Code` actions. Card titles are now `<h3>` headings.
+- Case-study drawer link buttons enlarged for legibility.
+- Asset cache-busting strings bumped to `?v=2.7.0`.
+
+### Fixed
+- Command palette entries `Jump to Expertise` and `Jump to Development Philosophy` pointed at missing anchors; Expertise merged into About, and the philosophy card now carries `id="philosophy"`.
+- Hero stats on phones (≤480px) no longer wrap into one-word lines; they sit in three tidy columns.
+- Journey `ALL [n]` filter label is now computed from `journey.json` (was hardcoded `[5]` with 6 entries).
+- Mobile menu: hamburger morphs into a close icon, and `Escape` closes the menu and returns focus to the toggle.
+- Clicking `Live` / `Code` inside a project card no longer also opens the drawer; closing the drawer returns focus to the card's case-study button.
+- Architecture node-graph canvas stops its animation loop while off-screen.
+
 ## [2.6.4] — 2026-11-15
 
 ### Security — Content Security Policy, Zero-Secret Verification & DOM XSS Remediation

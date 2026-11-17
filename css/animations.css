@@ -82,3 +82,41 @@
   transform: translateY(100%);
 }
 
+
+/* ==========================================================================
+   MOTION SYSTEM HOOKS (v2.7.0) — driven by js/modules/motion.js
+   ========================================================================== */
+
+/* CSS-only fallback loop for the tech ticker (GSAP takes over when present) */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Line-mask reveals for display headings */
+.reveal-line {
+  display: block;
+}
+
+.reveal-line.is-masking {
+  overflow: hidden;
+}
+
+.reveal-line__inner {
+  display: block;
+}
+
+/* Magnetic buttons: GSAP owns transform, so CSS must not transition it */
+.is-magnetic {
+  transition-property: background-color, border-color, box-shadow, color !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-ticker__track {
+    animation: none;
+  }
+}

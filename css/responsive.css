@@ -379,3 +379,70 @@
 }
 
 
+
+/* --------------------------------------------------------------------------
+   v2.7.0 — Projects Grid, Quick Dock & Mobile Hero Stats
+   -------------------------------------------------------------------------- */
+@media (max-width: 1279px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-grid .project-mockup-frame {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .journey-progress {
+    left: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid .project-mockup-frame {
+    aspect-ratio: 16 / 9;
+  }
+
+  .quick-dock__status {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats-stack {
+    flex-wrap: nowrap;
+    gap: var(--space-sm);
+  }
+
+  .hero-stat-item {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-right: var(--space-xs);
+  }
+
+  .hero-stat-num {
+    font-size: 2.25rem;
+    white-space: nowrap;
+  }
+
+  .quick-dock {
+    bottom: var(--space-sm);
+  }
+
+  .quick-dock__btn:not(.quick-dock__btn--primary) {
+    padding: 0.55rem 0.7rem;
+  }
+
+  /* Icon-only on phones; each control keeps its aria-label */
+  .quick-dock__btn:not(.quick-dock__btn--primary) span {
+    display: none;
+  }
+}

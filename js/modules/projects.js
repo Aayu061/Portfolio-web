@@ -27,12 +27,18 @@ export async function initProjects() {
 
   // 2. Open Case Study Drawer Handler (Click & Keyboard Enter/Space)
   document.addEventListener('click', (e) => {
+    // Live / Code links inside a card navigate normally instead of opening the drawer
+    if (e.target.closest('a[href]') && !e.target.closest('[data-action="open-case-study"]')) return;
+
     const trigger = e.target.closest('[data-action="open-case-study"], .project-card-editorial');
     if (trigger) {
       const projectId = trigger.getAttribute('data-project-id');
       const project = projectsData.find(p => p.id === projectId);
       if (project) {
-        lastFocusedElement = trigger;
+        // Cards are not focusable themselves; return focus to their case-study button
+        lastFocusedElement = trigger.matches('.project-card-editorial')
+          ? trigger.querySelector('[data-action="open-case-study"]') || trigger
+          : trigger;
         openDrawer(project, drawer, backdrop);
       }
     }
@@ -248,6 +254,7 @@ function openDrawer(project, drawer, backdrop) {
   if (focusable.length) focusable[0].focus();
 
   eventBus.emit('sound:trigger', { type: 'open' });
+  eventBus.emit('case-study:opened', { id: project.id });
 }
 
 function closeDrawer(drawer, backdrop) {

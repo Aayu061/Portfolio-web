@@ -80,6 +80,15 @@ export function initNavigation() {
       const isOpen = navContainer.classList.toggle('open');
       mobileToggle.setAttribute('aria-expanded', isOpen.toString());
     });
+
+    // Escape closes the mobile menu and returns focus to the toggle
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navContainer.classList.contains('open')) {
+        navContainer.classList.remove('open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.focus();
+      }
+    });
   }
 
   // 5. Global Cursor Tracker for Ambient Lighting

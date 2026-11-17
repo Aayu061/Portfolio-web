@@ -39,6 +39,9 @@
   --hero-intro-color: #ff5376;
   --hero-intro-glow: 0 0 20px rgba(255, 83, 118, 0.45);
 
+  --spotlight-color: rgba(211, 16, 39, 0.2);
+  --ticker-stroke: rgba(255, 255, 255, 0.35);
+
   --grid-line: rgba(255, 255, 255, 0.03);
   --node-canvas-bg: #07080b;
   --node-circle-stroke: #D31027;
@@ -79,6 +82,9 @@
 
   --hero-intro-color: #D31027;
   --hero-intro-glow: none;
+
+  --spotlight-color: rgba(211, 16, 39, 0.09);
+  --ticker-stroke: rgba(17, 18, 22, 0.4);
 
   --grid-line: rgba(17, 18, 22, 0.04);
   --node-canvas-bg: #FAF7F5;

@@ -79,6 +79,15 @@
   --z-drawer: 400;
   --z-preloader: 500;
 
+  /* Project Mockup Browser Chrome (cards always render as dark "screens") */
+  --mockup-chrome-bg: rgba(255, 255, 255, 0.05);
+  --mockup-chrome-border: rgba(255, 255, 255, 0.08);
+  --mockup-chrome-text: rgba(255, 255, 255, 0.55);
+  --mockup-live-bg: rgba(7, 8, 11, 0.6);
+
+  /* Recruiter Quick-Links Dock */
+  --z-dock: 90;
+
   /* Default Dynamic Cursor Lighting */
   --cursor-x: 50vw;
   --cursor-y: 50vh;

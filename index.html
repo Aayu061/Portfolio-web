@@ -34,14 +34,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Modular CSS Hierarchy -->
-  <link rel="stylesheet" href="css/variables.css?v=2.6.4">
-  <link rel="stylesheet" href="css/reset.css?v=2.6.4">
-  <link rel="stylesheet" href="css/typography.css?v=2.6.4">
-  <link rel="stylesheet" href="css/themes.css?v=2.6.4">
-  <link rel="stylesheet" href="css/layout.css?v=2.6.4">
-  <link rel="stylesheet" href="css/components.css?v=2.6.4">
-  <link rel="stylesheet" href="css/animations.css?v=2.6.4">
-  <link rel="stylesheet" href="css/responsive.css?v=2.6.4">
+  <link rel="stylesheet" href="css/variables.css?v=2.7.0">
+  <link rel="stylesheet" href="css/reset.css?v=2.7.0">
+  <link rel="stylesheet" href="css/typography.css?v=2.7.0">
+  <link rel="stylesheet" href="css/themes.css?v=2.7.0">
+  <link rel="stylesheet" href="css/layout.css?v=2.7.0">
+  <link rel="stylesheet" href="css/components.css?v=2.7.0">
+  <link rel="stylesheet" href="css/animations.css?v=2.7.0">
+  <link rel="stylesheet" href="css/responsive.css?v=2.7.0">
 
   <!-- GSAP & ScrollTrigger via CDN with SRI -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" 
@@ -237,7 +237,15 @@
       </div>
     </section>
 
-    <!-- 02. Selected Projects Section (Infinite Horizontal Loop Marquee) -->
+    <!-- Tech Stack Ticker (decorative; the same skills are listed in About) -->
+    <div class="tech-ticker" aria-hidden="true">
+      <div class="tech-ticker__track">
+        <div class="tech-ticker__group"><span class="tech-ticker__item">Node.js</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Express</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">PostgreSQL</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Supabase RLS</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">TypeScript</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">JavaScript ES6+</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Firebase / Firestore</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Gemini API</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">JWT Auth &amp; RBAC</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">REST APIs</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Vercel</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Render</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">GSAP</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Git &amp; GitHub</span><span class="tech-ticker__sep">✦</span></div>
+        <div class="tech-ticker__group"><span class="tech-ticker__item">Node.js</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Express</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">PostgreSQL</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Supabase RLS</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">TypeScript</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">JavaScript ES6+</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Firebase / Firestore</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Gemini API</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">JWT Auth &amp; RBAC</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">REST APIs</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Vercel</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Render</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">GSAP</span><span class="tech-ticker__sep">✦</span><span class="tech-ticker__item">Git &amp; GitHub</span><span class="tech-ticker__sep">✦</span></div>
+      </div>
+    </div>
+
+    <!-- 02. Selected Projects Section (Responsive Grid with Tilt Cards) -->
     <section id="work" class="section work-section">
       <div class="container">
         <div class="projects-header-editorial">
@@ -246,147 +254,148 @@
             VIEW ALL PROJECTS &rarr;
           </a>
         </div>
-      </div>
 
-      <div class="projects-marquee-wrapper">
-        <div class="projects-marquee-track">
+        <p class="projects-intro-editorial">
+          Four shipped builds. Click any card for the full case study &mdash; problem, architecture, trade-offs, and code.
+        </p>
+
+        <ul class="projects-grid" role="list">
           <!-- Card 01: Place Your Service -->
-          <article class="project-card-editorial" data-project-id="place-your-service" tabindex="0">
-            <div class="project-mockup-frame mockup-pys">
-              <span class="mockup-badge">SAAS // FIELD SERVICE</span>
-              <div class="mockup-screen-title">PLACE YOUR SERVICE</div>
-              <div class="mockup-screen-sub">PostgreSQL &bull; Supabase RLS &bull; Automated Ticket Lifecycle</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">01</span>
-              <div class="project-info-editorial">
-                <strong>PLACE YOUR SERVICE</strong>
-                <small>FIELD SERVICE SAAS &bull; DISPATCH ENGINE</small>
+          <li class="project-grid-item">
+            <article class="project-card-editorial" data-project-id="place-your-service" aria-labelledby="project-title-pys">
+              <div class="project-mockup-frame mockup-pys">
+                <div class="mockup-chrome" aria-hidden="true">
+                  <span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span>
+                  <span class="mockup-chrome__url">place-your-service.vercel.app</span>
+                  <span class="mockup-live-pill"><span class="indicator-dot"></span>LIVE</span>
+                </div>
+                <span class="mockup-badge">SAAS // FIELD SERVICE</span>
+                <div class="mockup-screen-title">PLACE YOUR SERVICE</div>
+                <div class="mockup-screen-sub">PostgreSQL &bull; Supabase RLS &bull; Automated Ticket Lifecycle</div>
               </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
+              <div class="project-meta-row">
+                <span class="project-num-red">01</span>
+                <div class="project-info-editorial">
+                  <h3 id="project-title-pys" class="project-card-title">PLACE YOUR SERVICE</h3>
+                  <small>FIELD SERVICE SAAS &bull; DISPATCH ENGINE</small>
+                </div>
+                <span class="project-arrow-red" aria-hidden="true">&rarr;</span>
+              </div>
+              <div class="project-card-body">
+                <p class="project-card-summary">Production AC service management platform covering service, asset, AMC, technician, inventory, and payment operations with audit logs.</p>
+                <ul class="project-card-stack" aria-label="Tech stack">
+                  <li>TypeScript</li><li>Node.js</li><li>Supabase</li><li>PostgreSQL</li>
+                </ul>
+                <div class="project-card-actions">
+                  <button type="button" class="project-action project-action--primary" data-action="open-case-study" data-project-id="place-your-service">Case study &rarr;</button>
+                  <a class="project-action" href="https://place-your-service.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Place Your Service live site (opens in new tab)">Live &nearr;</a>
+                  <a class="project-action" href="https://github.com/Aayu061/place-your-service" target="_blank" rel="noopener noreferrer" aria-label="Place Your Service source code on GitHub (opens in new tab)">Code &nearr;</a>
+                </div>
+              </div>
+            </article>
+          </li>
 
           <!-- Card 02: Extreme Sales & Services -->
-          <article class="project-card-editorial" data-project-id="extreme-sales-services" tabindex="0">
-            <div class="project-mockup-frame mockup-extreme">
-              <span class="mockup-badge">COMMERCIAL HVAC // ERP</span>
-              <div class="mockup-screen-title">EXTREME SALES</div>
-              <div class="mockup-screen-sub">Heavy Engineering &bull; Invoicing &bull; Dispatch Pipeline</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">02</span>
-              <div class="project-info-editorial">
-                <strong>EXTREME SALES &amp; SERVICES</strong>
-                <small>COMMERCIAL HVAC &bull; SERVICE PLATFORM</small>
+          <li class="project-grid-item">
+            <article class="project-card-editorial" data-project-id="extreme-sales-services" aria-labelledby="project-title-extreme">
+              <div class="project-mockup-frame mockup-extreme">
+                <div class="mockup-chrome" aria-hidden="true">
+                  <span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span>
+                  <span class="mockup-chrome__url">extreme-sales-services.vercel.app</span>
+                  <span class="mockup-live-pill"><span class="indicator-dot"></span>LIVE</span>
+                </div>
+                <span class="mockup-badge">COMMERCIAL HVAC // ERP</span>
+                <div class="mockup-screen-title">EXTREME SALES</div>
+                <div class="mockup-screen-sub">Heavy Engineering &bull; Invoicing &bull; Dispatch Pipeline</div>
               </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
+              <div class="project-meta-row">
+                <span class="project-num-red">02</span>
+                <div class="project-info-editorial">
+                  <h3 id="project-title-extreme" class="project-card-title">EXTREME SALES &amp; SERVICES</h3>
+                  <small>COMMERCIAL HVAC &bull; SERVICE PLATFORM</small>
+                </div>
+                <span class="project-arrow-red" aria-hidden="true">&rarr;</span>
+              </div>
+              <div class="project-card-body">
+                <p class="project-card-summary">Full-stack HVAC sales, servicing, recurring AMC lifecycle, and real-time dispatch platform, live in production on Vercel and Render.</p>
+                <ul class="project-card-stack" aria-label="Tech stack">
+                  <li>Node.js</li><li>Express</li><li>Firestore</li><li>Vercel</li>
+                </ul>
+                <div class="project-card-actions">
+                  <button type="button" class="project-action project-action--primary" data-action="open-case-study" data-project-id="extreme-sales-services">Case study &rarr;</button>
+                  <a class="project-action" href="https://extreme-sales-services.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Extreme Sales and Services live site (opens in new tab)">Live &nearr;</a>
+                  <a class="project-action" href="https://github.com/Aayu061/extreme-sales-services" target="_blank" rel="noopener noreferrer" aria-label="Extreme Sales and Services source code on GitHub (opens in new tab)">Code &nearr;</a>
+                </div>
+              </div>
+            </article>
+          </li>
 
           <!-- Card 03: AI Café -->
-          <article class="project-card-editorial" data-project-id="ai-cafe" tabindex="0">
-            <div class="project-mockup-frame mockup-aicafe">
-              <span class="mockup-badge">GENAI // COMMERCE</span>
-              <div class="mockup-screen-title">AI CAFÉ</div>
-              <div class="mockup-screen-sub">Autonomous Gemini Barista &bull; Order Intelligence &bull; Voice Ops</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">03</span>
-              <div class="project-info-editorial">
-                <strong>AI CAFÉ</strong>
-                <small>GENAI COMMERCE &bull; MULTI-MODAL BARISTA</small>
+          <li class="project-grid-item">
+            <article class="project-card-editorial" data-project-id="ai-cafe" aria-labelledby="project-title-aicafe">
+              <div class="project-mockup-frame mockup-aicafe">
+                <div class="mockup-chrome" aria-hidden="true">
+                  <span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span>
+                  <span class="mockup-chrome__url">github.com/Aayu061/Ai-cafe</span>
+                </div>
+                <span class="mockup-badge">GENAI // COMMERCE</span>
+                <div class="mockup-screen-title">AI CAFÉ</div>
+                <div class="mockup-screen-sub">Autonomous Gemini Barista &bull; Order Intelligence &bull; Voice Ops</div>
               </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
+              <div class="project-meta-row">
+                <span class="project-num-red">03</span>
+                <div class="project-info-editorial">
+                  <h3 id="project-title-aicafe" class="project-card-title">AI CAFÉ</h3>
+                  <small>GENAI COMMERCE &bull; MULTI-MODAL BARISTA</small>
+                </div>
+                <span class="project-arrow-red" aria-hidden="true">&rarr;</span>
+              </div>
+              <div class="project-card-body">
+                <p class="project-card-summary">Cinematic AI-driven commerce platform with a 192-frame canvas experience, a Gemini-powered intent-aware AI Barista, and a Drink Studio.</p>
+                <ul class="project-card-stack" aria-label="Tech stack">
+                  <li>TypeScript</li><li>Gemini API</li><li>HTML5 Canvas</li><li>Firestore</li>
+                </ul>
+                <div class="project-card-actions">
+                  <button type="button" class="project-action project-action--primary" data-action="open-case-study" data-project-id="ai-cafe">Case study &rarr;</button>
+                  <a class="project-action" href="https://github.com/Aayu061/Ai-cafe" target="_blank" rel="noopener noreferrer" aria-label="AI Café source code on GitHub (opens in new tab)">Code &nearr;</a>
+                </div>
+              </div>
+            </article>
+          </li>
 
           <!-- Card 04: Nexa Bank -->
-          <article class="project-card-editorial" data-project-id="nexa-bank" tabindex="0">
-            <div class="project-mockup-frame mockup-nexa">
-              <span class="mockup-badge">FINTECH // CORE BANKING</span>
-              <div class="mockup-screen-title">NEXA BANK</div>
-              <div class="mockup-screen-sub">ACID Transactions &bull; Loan Engine &bull; RBAC Ledger</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">04</span>
-              <div class="project-info-editorial">
-                <strong>NEXA BANK</strong>
-                <small>FINTECH SAAS &bull; CORE BANKING PLATFORM</small>
+          <li class="project-grid-item">
+            <article class="project-card-editorial" data-project-id="nexa-bank" aria-labelledby="project-title-nexa">
+              <div class="project-mockup-frame mockup-nexa">
+                <div class="mockup-chrome" aria-hidden="true">
+                  <span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span><span class="mockup-chrome__dot"></span>
+                  <span class="mockup-chrome__url">github.com/Aayu061/Bank-loan</span>
+                </div>
+                <span class="mockup-badge">FINTECH // CORE BANKING</span>
+                <div class="mockup-screen-title">NEXA BANK</div>
+                <div class="mockup-screen-sub">ACID Transactions &bull; Loan Engine &bull; RBAC Ledger</div>
               </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
-
-          <!-- DUPLICATE SET FOR INFINITE SEAMLESS LOOP -->
-          <!-- Card 01 Duplicate -->
-          <article class="project-card-editorial" data-project-id="place-your-service" aria-hidden="true" tabindex="-1">
-            <div class="project-mockup-frame mockup-pys">
-              <span class="mockup-badge">SAAS // FIELD SERVICE</span>
-              <div class="mockup-screen-title">PLACE YOUR SERVICE</div>
-              <div class="mockup-screen-sub">PostgreSQL &bull; Supabase RLS &bull; Automated Ticket Lifecycle</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">01</span>
-              <div class="project-info-editorial">
-                <strong>PLACE YOUR SERVICE</strong>
-                <small>FIELD SERVICE SAAS &bull; DISPATCH ENGINE</small>
+              <div class="project-meta-row">
+                <span class="project-num-red">04</span>
+                <div class="project-info-editorial">
+                  <h3 id="project-title-nexa" class="project-card-title">NEXA BANK</h3>
+                  <small>FINTECH SAAS &bull; CORE BANKING PLATFORM</small>
+                </div>
+                <span class="project-arrow-red" aria-hidden="true">&rarr;</span>
               </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
-
-          <!-- Card 02 Duplicate -->
-          <article class="project-card-editorial" data-project-id="extreme-sales-services" aria-hidden="true" tabindex="-1">
-            <div class="project-mockup-frame mockup-extreme">
-              <span class="mockup-badge">COMMERCIAL HVAC // ERP</span>
-              <div class="mockup-screen-title">EXTREME SALES</div>
-              <div class="mockup-screen-sub">Heavy Engineering &bull; Invoicing &bull; Dispatch Pipeline</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">02</span>
-              <div class="project-info-editorial">
-                <strong>EXTREME SALES &amp; SERVICES</strong>
-                <small>COMMERCIAL HVAC &bull; SERVICE PLATFORM</small>
+              <div class="project-card-body">
+                <p class="project-card-summary">Full-stack loan management platform on Express and PostgreSQL with relational SQL migrations, JWT security, an EMI calculator, and an admin portal.</p>
+                <ul class="project-card-stack" aria-label="Tech stack">
+                  <li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>JWT</li>
+                </ul>
+                <div class="project-card-actions">
+                  <button type="button" class="project-action project-action--primary" data-action="open-case-study" data-project-id="nexa-bank">Case study &rarr;</button>
+                  <a class="project-action" href="https://github.com/Aayu061/Bank-loan" target="_blank" rel="noopener noreferrer" aria-label="Nexa Bank source code on GitHub (opens in new tab)">Code &nearr;</a>
+                </div>
               </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
-
-          <!-- Card 03 Duplicate -->
-          <article class="project-card-editorial" data-project-id="ai-cafe" aria-hidden="true" tabindex="-1">
-            <div class="project-mockup-frame mockup-aicafe">
-              <span class="mockup-badge">GENAI // COMMERCE</span>
-              <div class="mockup-screen-title">AI CAFÉ</div>
-              <div class="mockup-screen-sub">Autonomous Gemini Barista &bull; Order Intelligence &bull; Voice Ops</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">03</span>
-              <div class="project-info-editorial">
-                <strong>AI CAFÉ</strong>
-                <small>GENAI COMMERCE &bull; MULTI-MODAL BARISTA</small>
-              </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
-
-          <!-- Card 04 Duplicate -->
-          <article class="project-card-editorial" data-project-id="nexa-bank" aria-hidden="true" tabindex="-1">
-            <div class="project-mockup-frame mockup-nexa">
-              <span class="mockup-badge">FINTECH // CORE BANKING</span>
-              <div class="mockup-screen-title">NEXA BANK</div>
-              <div class="mockup-screen-sub">ACID Transactions &bull; Loan Engine &bull; RBAC Ledger</div>
-            </div>
-            <div class="project-meta-row">
-              <span class="project-num-red">04</span>
-              <div class="project-info-editorial">
-                <strong>NEXA BANK</strong>
-                <small>FINTECH SAAS &bull; CORE BANKING PLATFORM</small>
-              </div>
-              <span class="project-arrow-red">&rarr;</span>
-            </div>
-          </article>
-        </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -412,17 +421,20 @@
 
             <div class="mt-sm">
               <span class="section-tag">CORE COMPETENCIES</span>
-              <div class="skills-pills-wrap">
-                <span class="skill-pill-dark">HTML5 / CSS3</span>
-                <span class="skill-pill-dark">JavaScript ES6+</span>
-                <span class="skill-pill-dark">Node.js / Express</span>
-                <span class="skill-pill-dark">PostgreSQL</span>
-                <span class="skill-pill-dark">Supabase RLS</span>
-                <span class="skill-pill-dark">RESTful APIs</span>
-                <span class="skill-pill-dark">GSAP Motion</span>
-                <span class="skill-pill-dark">Git &amp; GitHub</span>
-                <span class="skill-pill-dark">Vercel &amp; Render</span>
-                <span class="skill-pill-dark">JWT Auth &amp; RBAC</span>
+              <div class="skills-pills-wrap" role="group" aria-label="Core competencies. Select a skill to see which projects use it.">
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="html5,css3">HTML5 / CSS3</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="javascript,typescript">JavaScript ES6+</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="node.js,express">Node.js / Express</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="postgresql">PostgreSQL</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="supabase">Supabase RLS</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="rest api,express">RESTful APIs</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="gsap" data-skill-note="Powers every animation on this portfolio.">GSAP Motion</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="github.com">Git &amp; GitHub</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="vercel,render">Vercel &amp; Render</button>
+                <button type="button" class="skill-pill-dark" aria-pressed="false" data-skill-keys="jwt,role-based,rbac">JWT Auth &amp; RBAC</button>
+              </div>
+              <div class="skill-evidence" aria-live="polite">
+                <span class="skill-evidence__hint">&#9656; Pick a skill to see the projects that use it.</span>
               </div>
             </div>
           </div>
@@ -496,7 +508,7 @@
           </div>
 
           <!-- Column 3: Solid Crimson Red Quote Card -->
-          <div class="bento-card-editorial bento-card-crimson">
+          <div id="philosophy" class="bento-card-editorial bento-card-crimson">
             <span class="bento-micro-tag bento-micro-tag--crimson">03 // PHILOSOPHY &amp; MANIFESTO</span>
             <div class="quote-giant-mark">&ldquo;</div>
             <div class="quote-body-text">
@@ -550,7 +562,10 @@
           <button type="button" class="filter-pill" data-filter="PROJECT">PROJECTS</button>
         </div>
 
-        <div id="journey-timeline" class="journey-timeline"></div>
+        <div class="journey-track">
+          <div class="journey-progress" aria-hidden="true"></div>
+          <div id="journey-timeline" class="journey-timeline"></div>
+        </div>
       </div>
     </section>
 
@@ -662,6 +677,27 @@
     </footer>
   </main>
 
+  <!-- Recruiter Quick-Links Dock (appears after the hero, hides at the contact section) -->
+  <nav class="quick-dock" aria-label="Recruiter quick links">
+    <span class="quick-dock__status"><span class="indicator-dot"></span>Open to internships</span>
+    <button type="button" class="quick-dock__btn quick-dock__btn--primary" data-action="open-resume-preview">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      <span>Resume</span>
+    </button>
+    <button type="button" class="quick-dock__btn" data-action="copy-email" aria-label="Copy email address">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <span>Email</span>
+    </button>
+    <a class="quick-dock__btn" href="https://www.linkedin.com/in/aayush-panchal-24313044b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+      <span>LinkedIn</span>
+    </a>
+    <a class="quick-dock__btn" href="https://github.com/Aayu061" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      <span>GitHub</span>
+    </a>
+  </nav>
+
   <!-- Deep-Dive Case Study Slide-Over Drawer Overlay -->
   <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
   <aside id="case-study-drawer" class="case-study-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
@@ -760,6 +796,6 @@
   <div id="toast-hud" class="toast-hud" role="status" aria-live="polite"></div>
 
   <!-- Master ES Module Bootstrap -->
-  <script type="module" src="js/main.js?v=2.6.4"></script>
+  <script type="module" src="js/main.js?v=2.7.0"></script>
 </body>
 </html>

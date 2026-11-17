@@ -5,10 +5,13 @@
 
 import { initTheme } from './modules/theme.js';
 import { initCursor } from './modules/cursor.js';
+import { initMotion } from './modules/motion.js';
 import { initPreloader } from './modules/preloader.js';
 import { initNavigation } from './modules/navigation.js';
 import { initHeroVisual } from './modules/hero-visual.js';
 import { initProjects } from './modules/projects.js';
+import { initSkillEvidence } from './modules/skills.js';
+import { initQuickDock } from './modules/quick-dock.js';
 import { initCommandPalette } from './modules/command-palette.js';
 import { initInspector } from './modules/inspector.js';
 import { initJourney } from './modules/journey.js';
@@ -21,13 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initCursor();
 
-  // 2. Navigation & Preloader
+  // 2. Motion system subscribes to preloader/journey events, so it boots first
+  initMotion();
+
+  // 3. Navigation & Preloader
   initNavigation();
   initPreloader();
 
-  // 3. Interactive Engines
+  // 4. Interactive Engines
   initHeroVisual();
   initProjects();
+  initSkillEvidence();
+  initQuickDock();
   initPortrait();
   initResumePreview();
   initCommandPalette();
@@ -35,4 +43,3 @@ document.addEventListener('DOMContentLoaded', () => {
   initJourney();
   initContact();
 });
-

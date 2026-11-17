@@ -35,6 +35,7 @@ export function initPreloader() {
 
     setTimeout(() => {
       preloader.classList.add('dismiss-curtains');
+      eventBus.emit('preloader:exit');
       setTimeout(() => {
         preloader.classList.add('dismissed');
         eventBus.emit('studio:ready');

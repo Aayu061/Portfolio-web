@@ -18,8 +18,7 @@ export function initCommandPalette() {
   const commands = [
     // Sections
     { label: 'Jump to Home', category: 'Navigation', action: () => scrollTo('#home') },
-    { label: 'Jump to About', category: 'Navigation', action: () => scrollTo('#about') },
-    { label: 'Jump to Expertise', category: 'Navigation', action: () => scrollTo('#expertise') },
+    { label: 'Jump to About, Skills & Process', category: 'Navigation', action: () => scrollTo('#about') },
     { label: 'Jump to Selected Work', category: 'Navigation', action: () => scrollTo('#work') },
     { label: 'Jump to Journey Timeline', category: 'Navigation', action: () => scrollTo('#journey') },
     { label: 'Jump to Development Philosophy', category: 'Navigation', action: () => scrollTo('#philosophy') },

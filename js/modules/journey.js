@@ -3,6 +3,8 @@
  * Renders verified education foundation and project milestones with filter pills.
  */
 
+import { eventBus } from '../core/event-bus.js';
+
 export async function initJourney() {
   const timelineContainer = document.getElementById('journey-timeline');
   const filterPills = document.querySelectorAll('.filter-pill');
@@ -12,12 +14,17 @@ export async function initJourney() {
   try {
     const res = await fetch('assets/data/journey.json');
     journeyItems = await res.json();
-    renderTimeline(journeyItems, 'ALL');
+
+    // Keep the "ALL [n]" label in sync with the data instead of a hardcoded count
+    const allPill = document.querySelector('.filter-pill[data-filter="ALL"]');
+    if (allPill) allPill.textContent = `ALL [${journeyItems.length}]`;
+
+    renderTimeline(journeyItems, 'ALL', true);
   } catch (err) {
     console.error('Failed to load journey.json:', err);
   }
 
-  function renderTimeline(items, filter) {
+  function renderTimeline(items, filter, initial = false) {
     if (!timelineContainer) return;
 
     const filtered = filter === 'ALL' 
@@ -38,6 +45,8 @@ export async function initJourney() {
         </div>
       </article>
     `).join('');
+
+    eventBus.emit('journey:rendered', { filter, initial });
   }
 
   filterPills.forEach(pill => {

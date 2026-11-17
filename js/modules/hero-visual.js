@@ -243,7 +243,18 @@ export function initHeroVisual() {
       }
     });
 
-    animationFrameId = requestAnimationFrame(render);
+    // Only keep animating while the canvas is on screen
+    animationFrameId = isOnScreen ? requestAnimationFrame(render) : null;
+  }
+
+  let isOnScreen = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      isOnScreen = entry.isIntersecting;
+      if (isOnScreen && animationFrameId === null) {
+        animationFrameId = requestAnimationFrame(render);
+      }
+    }).observe(canvas);
   }
 
   render();
